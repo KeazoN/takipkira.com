@@ -5,7 +5,7 @@ const Reference = () => {
     <section>
       <div className="container flex items-center justify-center flex-col gap-10 max-w-[1450px]">
         <div className="flex items-center justify-center flex-col gap-2">
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-4xl font-extrabold">
             Bize güvendiler, güvenmeye{" "}
             <span className="text-primary">devam ediyorlar!</span>
           </h2>

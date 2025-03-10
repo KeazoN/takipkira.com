@@ -7,7 +7,7 @@ const AppStore = () => {
       target="_blank"
     >
       <Image
-        src="/assets/img/mobile/appStore.webp"
+        src="/assets/img/mobile/appstore.svg"
         alt="appStore"
         width={2500}
         height={814}

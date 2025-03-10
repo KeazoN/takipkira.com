@@ -7,7 +7,7 @@ const PlayStore = () => {
       target="_blank"
     >
       <Image
-        src="/assets/img/mobile/googlePlay.webp"
+        src="/assets/img/mobile/googleplay.svg"
         alt="googlePlay"
         width={2500}
         height={814}
