@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import { TbArrowRight, TbLogin } from "react-icons/tb";
+import { TbArrowRight } from "react-icons/tb";
+import { motion } from "framer-motion";
 
 const Reference = () => {
   return (
@@ -24,12 +27,57 @@ const Reference = () => {
           </div>
         </div>
         <div className="overflow-hidden whitespace-nowrap relative">
-          <div className="w-[1000px] relative">
+          <div className="w-full relative">
             <div className="absolute top-0 left-0 w-[100px] h-full bg-gradient-to-r from-white to-transparent z-10"></div>
             <div className="absolute top-0 right-0 w-[100px] h-full bg-gradient-to-l from-white to-transparent z-10"></div>
-            <div className="animate-slide flex items-center justify-start gap-20">
+            <motion.div
+              animate={{
+                x: [0, -1920],
+              }}
+              transition={{
+                duration: 70,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="inline-flex items-center justify-start gap-20"
+            >
               <Image
                 src="/assets/img/ref/albaraka.png"
+                alt="reference"
+                width={150}
+                height={50}
+                className="h-10 w-fit object-contain"
+              />
+              <Image
+                src="/assets/img/ref/sahibinden.png"
+                alt="reference"
+                width={150}
+                height={50}
+                className="h-10 w-fit object-contain"
+              />
+              <Image
+                src="/assets/img/ref/kuveyt.svg"
+                alt="reference"
+                width={150}
+                height={50}
+                className="h-10 w-fit object-contain"
+              />
+              <Image
+                src="/assets/img/ref/hepsiemlak.svg"
+                alt="reference"
+                width={150}
+                height={50}
+                className="h-10 w-fit object-contain"
+              />
+              <Image
+                src="/assets/img/ref/emlakjet.png"
+                alt="reference"
+                width={150}
+                height={50}
+                className="h-10 w-fit object-contain"
+              />
+              <Image
+                src="/assets/img/ref/erciyesTeknopark.svg"
                 alt="reference"
                 width={150}
                 height={50}
@@ -43,48 +91,41 @@ const Reference = () => {
                 className="h-10 w-fit object-contain"
               />
               <Image
-                src="/assets/img/ref/albaraka.png"
+                src="/assets/img/ref/sahibinden.png"
                 alt="reference"
                 width={150}
                 height={50}
                 className="h-10 w-fit object-contain"
               />
               <Image
-                src="/assets/img/ref/albaraka.png"
+                src="/assets/img/ref/kuveyt.svg"
                 alt="reference"
                 width={150}
                 height={50}
                 className="h-10 w-fit object-contain"
               />
               <Image
-                src="/assets/img/ref/albaraka.png"
+                src="/assets/img/ref/hepsiemlak.svg"
                 alt="reference"
                 width={150}
                 height={50}
                 className="h-10 w-fit object-contain"
               />
               <Image
-                src="/assets/img/ref/albaraka.png"
+                src="/assets/img/ref/emlakjet.png"
                 alt="reference"
                 width={150}
                 height={50}
                 className="h-10 w-fit object-contain"
               />
               <Image
-                src="/assets/img/ref/albaraka.png"
+                src="/assets/img/ref/erciyesTeknopark.svg"
                 alt="reference"
                 width={150}
                 height={50}
                 className="h-10 w-fit object-contain"
               />
-              <Image
-                src="/assets/img/ref/albaraka.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
