@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/inc/Nav";
+import Footer from "@/components/inc/Footer";
 
 export const metadata: Metadata = {
   title: "Takip Kira",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} antialiased text-[#010F34]`}>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

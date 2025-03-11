@@ -9,7 +9,7 @@ const Reference = () => {
     <section className="mt-10">
       <div className="container flex items-center justify-center flex-col gap-10 max-w-[1255px]">
         <div className="flex items-center justify-center w-full">
-          <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-center flex-col gap-2">
             <h2 className="text-4xl font-extrabold">
               Onlarla Çalışıyoruz,{" "}
               <span className="text-primary">Gücünüze Güç Katıyoruz!</span>
