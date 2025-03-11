@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 const Reference = () => {
   return (
-    <section>
+    <section className="mt-10">
       <div className="container flex items-center justify-center flex-col gap-10 max-w-[1255px]">
-        <div className="flex items-center justify-between w-full">
+        <div className="flex items-center justify-center w-full">
           <div className="flex flex-col gap-2">
             <h2 className="text-4xl font-extrabold">
               Onlarla Çalışıyoruz,{" "}
@@ -18,12 +18,6 @@ const Reference = () => {
               İşletmelerinizin güvenliğini sağlamak için güvenilir bir partner
               arıyorsanız, bizimle iletişime geçin.
             </p>
-          </div>
-          <div className="flex items-center justify-center gap-4">
-            <button className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75">
-              Hemen Başla
-              <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-            </button>
           </div>
         </div>
         <div className="overflow-hidden whitespace-nowrap relative">

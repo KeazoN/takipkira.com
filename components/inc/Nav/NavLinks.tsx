@@ -11,13 +11,6 @@ const NavLinks = () => (
     <li>
       <Link href="/">
         <p className="flex items-center gap-1">
-          Hakkımızda <TbChevronDown className="w-3 h-3" />
-        </p>
-      </Link>
-    </li>
-    <li>
-      <Link href="/">
-        <p className="flex items-center gap-1">
           Hizmetlerimiz <TbChevronDown className="w-3 h-3" />
         </p>
       </Link>
@@ -29,7 +22,19 @@ const NavLinks = () => (
     </li>
     <li>
       <Link href="/">
+        <p>Blog</p>
+      </Link>
+    </li>
+    <li>
+      <Link href="/">
         <p>İletişim</p>
+      </Link>
+    </li>
+    <li>
+      <Link href="/">
+        <p className="flex items-center gap-1">
+          Yardım <TbChevronDown className="w-3 h-3" />
+        </p>
       </Link>
     </li>
   </ul>

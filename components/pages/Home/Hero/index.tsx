@@ -24,15 +24,15 @@ const Hero = () => {
               "Tadilat Takibi Bizde!",
               "Sözleşme Takibi Bizde!",
             ]}
-            mainClassName="transition-all duration-300 w-fit text-nowrap px-4 sm:px-2 md:px-3 bg-primary text-white overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg"
+            mainClassName="transition-all duration-1000 ease-in-out w-full text-nowrap px-4 sm:px-2 md:px-3 bg-primary text-white overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg"
             staggerFrom={"last"}
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "-120%" }}
             staggerDuration={0.025}
             splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={3000}
+            transition={{ type: "spring", damping: 15, stiffness: 200 }}
+            rotationInterval={4000}
           />
         </h1>
 
