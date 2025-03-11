@@ -1,3 +1,4 @@
+import Blog from "./Blog";
 import GoMobile from "./GoMobile";
 import Hero from "./Hero";
 import Presentation from "./Presentation";
@@ -14,6 +15,7 @@ const Home = () => {
       <WhoAreWe />
       <Presentation />
       <GoMobile />
+      <Blog />
     </div>
   );
 };
