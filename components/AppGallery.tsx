@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const AppGallery = () => {
+const AppGallery = ({ className }: { className?: string }) => {
   return (
     <a href="#" target="_blank">
       <Image
@@ -8,7 +8,7 @@ const AppGallery = () => {
         alt="appGallery"
         width={2500}
         height={814}
-        className="relative top-16 w-32 h-fit drop-shadow-lg"
+        className={`relative top-16 w-32 h-fit drop-shadow-lg ${className}`}
       />
     </a>
   );

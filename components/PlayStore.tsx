@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const PlayStore = () => {
+const PlayStore = ({ className }: { className?: string }) => {
   return (
     <a
       href="https://play.google.com/store/apps/details?id=com.takipkira.mobile&hl=tr"
@@ -11,7 +11,7 @@ const PlayStore = () => {
         alt="googlePlay"
         width={2500}
         height={814}
-        className="relative top-16 w-32 h-fit drop-shadow-lg"
+        className={`relative top-16 w-32 h-fit drop-shadow-lg ${className}`}
       />
     </a>
   );

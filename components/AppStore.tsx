@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const AppStore = () => {
+const AppStore = ({ className }: { className?: string }) => {
   return (
     <a
       href="https://apps.apple.com/us/app/takip-kira/id6479267890"
@@ -11,7 +11,7 @@ const AppStore = () => {
         alt="appStore"
         width={2500}
         height={814}
-        className="relative top-16 w-32 h-fit drop-shadow-lg"
+        className={`relative top-16 w-32 h-fit drop-shadow-lg ${className}`}
       />
     </a>
   );
