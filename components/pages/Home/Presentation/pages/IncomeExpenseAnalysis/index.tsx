@@ -12,7 +12,8 @@ const IncomeExpenseAnalysis = () => {
             Gelir & Gider Analizi
           </span>
           <h2 className="text-4xl font-bold">
-            Mülklerinizin Finansal Durumunu Kontrol Edin!
+            Mülklerinizin Finansal Durumunu{" "}
+            <span className="text-primary">Kontrol Edin!</span>
           </h2>
           <p className="text-gray-500">
             Kira gelirlerinizi ve harcamalarınızı detaylı grafiklerle inceleyin.

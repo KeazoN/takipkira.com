@@ -12,7 +12,8 @@ const RentTracking = () => {
             Akıllı Kira Takibi
           </span>
           <h2 className="text-4xl font-bold">
-            Kiranızı Takip Etmek Artık Çok Kolay!
+            Kiranızı Takip Etmek Artık{" "}
+            <span className="text-primary">Çok Kolay!</span>
           </h2>
           <p className="text-gray-500">
             Kira ödemelerinizi otomatik olarak takip edin, geciken ödemeler için

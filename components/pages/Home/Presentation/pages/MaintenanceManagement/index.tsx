@@ -15,7 +15,8 @@ const MaintenanceManagement = () => {
             Tadilat & Bakım Yönetimi
           </span>
           <h2 className="text-4xl font-bold">
-            Bakım ve Tadilat İşlerinizi Kolayca Yönetin!
+            Bakım ve Tadilat İşlerinizi{" "}
+            <span className="text-primary">Kolayca Yönetin!</span>
           </h2>
           <p className="text-gray-500">
             Kiracılar ve mülk sahipleri, tadilat taleplerini sistem üzerinden
