@@ -4,18 +4,20 @@ import NavButtons from "./NavButtons";
 import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const pathname = usePathname();
+  const [hasScrolled, setHasScrolled] = useState(pathname.includes("/blog"));
 
   useEffect(() => {
     const handleScroll = () => {
-      setHasScrolled(window.scrollY > 0);
+      setHasScrolled(window.scrollY > 0 || pathname.includes("/blog"));
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <nav
@@ -27,8 +29,10 @@ const Nav = () => {
     >
       <div className="container max-w-[1450px] flex items-center justify-between px-8 gap-10">
         <NavLogo />
-        <NavLinks />
-        <NavButtons />
+        <div className="flex items-center gap-8">
+          <NavLinks />
+          <NavButtons />
+        </div>
       </div>
     </nav>
   );

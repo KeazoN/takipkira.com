@@ -3,7 +3,6 @@ import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/inc/Nav";
 import Footer from "@/components/inc/Footer";
-
 export const metadata: Metadata = {
   title: "Takip Kira",
   description: "Takip Kira",
