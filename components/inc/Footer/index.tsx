@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   TbBrandFacebook,
   TbBrandInstagram,
@@ -9,6 +12,12 @@ import {
 } from "react-icons/tb";
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  if (pathname.includes("/uye-ol")) {
+    return <></>;
+  }
+
   return (
     <footer className="container max-w-[1450px] mx-auto h-fit mb-12 px-10 rounded-3xl bg-gradient-to-b from-sky-50 to-sky-100 py-16">
       <div className="w-full">
