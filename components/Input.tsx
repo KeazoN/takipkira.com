@@ -13,10 +13,11 @@ import {
   Path,
   RegisterOptions,
   UseFormClearErrors,
-  useFormContext,
   UseFormRegister,
   UseFormSetError,
   UseFormSetValue,
+  FieldErrorsImpl,
+  Merge,
 } from "react-hook-form";
 import { useMask } from "@react-input/mask";
 import { IMaskInput } from "react-imask";
@@ -41,7 +42,7 @@ export type FormFieldProps<T extends Object> = {
   style?: CSSProperties;
   options?: RegisterOptions<T, Path<T>>;
   register: UseFormRegister<T>;
-  error?: any;
+  error?: FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined;
   valueAsNumber?: boolean;
   setValue?: UseFormSetValue<T>;
   setError?: UseFormSetError<T>;
@@ -245,7 +246,7 @@ export const Input = <T extends Object>({
       </label>
       {error && (
         <span className="error-message text-red-400 text-sm px-4">
-          {error.message}
+          {error?.message?.toString()}
         </span>
       )}
     </div>
