@@ -1,10 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { TbArrowRight } from "react-icons/tb";
 import { motion } from "framer-motion";
 
 const Reference = () => {
+  const references = [
+    { src: "/assets/img/ref/albaraka.png", alt: "albaraka" },
+    { src: "/assets/img/ref/kuveyt.svg", alt: "kuveyt" },
+    { src: "/assets/img/ref/kuveytTurkApi.svg", alt: "kuveytturkapi" },
+    { src: "/assets/img/ref/puzzleLogo.svg", alt: "puzzle" },
+    { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
+    { src: "/assets/img/ref/albaraka.png", alt: "albaraka" },
+    { src: "/assets/img/ref/kuveyt.svg", alt: "kuveyt" },
+    { src: "/assets/img/ref/kuveytTurkApi.svg", alt: "kuveytturkapi" },
+    { src: "/assets/img/ref/puzzleLogo.svg", alt: "puzzle" },
+    { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
+    { src: "/assets/img/ref/albaraka.png", alt: "albaraka" },
+    { src: "/assets/img/ref/kuveyt.svg", alt: "kuveyt" },
+    { src: "/assets/img/ref/kuveytTurkApi.svg", alt: "kuveytturkapi" },
+    { src: "/assets/img/ref/puzzleLogo.svg", alt: "puzzle" },
+    { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
+  ];
   return (
     <section className="mt-10">
       <div className="container flex items-center justify-center flex-col gap-10 max-w-[1255px]">
@@ -35,90 +51,16 @@ const Reference = () => {
               }}
               className="inline-flex items-center justify-start gap-20"
             >
-              <Image
-                src="/assets/img/ref/albaraka.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/sahibinden.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/kuveyt.svg"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/hepsiemlak.svg"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/emlakjet.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/erciyesTeknopark.svg"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/albaraka.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/sahibinden.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/kuveyt.svg"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/hepsiemlak.svg"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/emlakjet.png"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
-              <Image
-                src="/assets/img/ref/erciyesTeknopark.svg"
-                alt="reference"
-                width={150}
-                height={50}
-                className="h-10 w-fit object-contain"
-              />
+              {references.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  width={150}
+                  height={50}
+                  className="h-10 w-fit object-contain"
+                />
+              ))}
             </motion.div>
           </div>
         </div>
