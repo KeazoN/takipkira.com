@@ -19,7 +19,10 @@ const Footer = () => {
   }
 
   return (
-    <footer className="container max-w-[1450px] mx-auto h-fit mb-12 px-10 rounded-3xl bg-gradient-to-b from-sky-50 to-sky-100 py-16">
+    <footer
+      id="footer"
+      className="container max-w-[1450px] mx-auto h-fit mb-12 px-10 rounded-3xl bg-gradient-to-b from-sky-50 to-sky-100 py-16"
+    >
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
           <div className="flex flex-col gap-4">

@@ -2,9 +2,10 @@ import RotatingText from "@/components/animations/RotatingText";
 import SplitText from "@/components/animations/SplitText";
 import AppGallery from "@/components/AppGallery";
 import AppStore from "@/components/AppStore";
+import { Input } from "@/components/Input";
 import PlayStore from "@/components/PlayStore";
 import Image from "next/image";
-import { TbArrowRight } from "react-icons/tb";
+import { TbArrowRight, TbMail, TbPhone, TbSearch } from "react-icons/tb";
 
 const Hero = () => {
   return (
@@ -20,16 +21,45 @@ const Hero = () => {
           Takip Kira ile ilgili veya mülk yönetimi ile ilgili sorularınızı
           direkt sorun.
         </p>
-        <div className="flex items-center justify-center gap-4">
-          <button className="bg-primary text-white px-8 py-2 group rounded-full font-medium flex items-center justify-center gap-2 transition border border-primary hover:brightness-75">
-            Hemen Başla{" "}
-            <TbArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-          </button>
-          <button className="bg-white text-primary px-8 py-2 group rounded-full font-medium border-gray-100 flex items-center justify-center gap-2 transition border hover:border-gray-400">
-            Daha Fazla{" "}
-            <TbArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-          </button>
+        <div className="flex flex-col gap-3 w-full">
+          <div className="relative flex items-center justify-center w-full">
+            <input
+              type="text"
+              placeholder="Sorularınızı yazın..."
+              className="py-3 rounded-full bg-white border pl-12 outline-none transition focus:ring focus:ring-primary w-full disabled:bg-gray-200 disabled:text-gray-500"
+            />
+            <button className="absolute left-4 text-gray-400">
+              <TbSearch className="w-5 h-5" />
+            </button>
+          </div>
+
+          <div className="flex items-center justify-center gap-2">
+            <button className="flex items-center justify-center gap-2 w-fit px-3 py-1 rounded-full bg-danger/15 text-danger border border-danger font-medium transition hover:text-white hover:bg-danger">
+              <p className="text-xs">Acil Destek</p>
+            </button>
+            <button className="flex items-center justify-center gap-2 w-fit px-3 py-1 rounded-full bg-warning/15 text-warning border border-warning font-medium transition hover:text-white hover:bg-warning">
+              <p className="text-xs">Kritik Bildirim</p>
+            </button>
+            <button className="flex items-center justify-center gap-2 w-fit px-3 py-1 rounded-full bg-primary/15 text-primary border border-primary font-medium transition hover:text-white hover:bg-primary">
+              <p className="text-xs">Olsa Fena Olmaz</p>
+            </button>
+            <button className="flex items-center justify-center gap-2 w-fit px-3 py-1 rounded-full bg-success/15 text-success border border-success font-medium transition hover:text-white hover:bg-success">
+              <p className="text-xs">İstek</p>
+            </button>
+          </div>
         </div>
+
+        <p className="text-xs relative top-8 text-gray-500">
+          Lütfen{" "}
+          <a href="#" className="text-primary underline">
+            Hizmet Sözleşmesi
+          </a>{" "}
+          ve{" "}
+          <a href="#" className="text-primary underline">
+            Gizlilik Politikası
+          </a>{" "}
+          okuduğunuza emin olunuz.
+        </p>
       </div>
     </section>
   );
