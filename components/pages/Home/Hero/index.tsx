@@ -66,11 +66,11 @@ const Hero = () => {
           <Image
             src="/assets/img/hero/taki_phone.webp"
             alt="mockup"
-            width={600}
-            height={600}
+            width={700}
+            height={700}
             className="relative top-16 drop-shadow-xl z-20"
           />
-          {/* <div className="absolute top-20 z-0 -right-16 w-full h-full">
+          <div className="absolute top-20 z-0 -right-0 left-96 w-full h-full">
             <Image
               src="/assets/blobs/blobs.svg"
               alt="blobs"
@@ -78,7 +78,7 @@ const Hero = () => {
               height={1200}
               className="scale-150"
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
