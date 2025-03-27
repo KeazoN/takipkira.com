@@ -1,11 +1,4 @@
-import RotatingText from "@/components/animations/RotatingText";
-import SplitText from "@/components/animations/SplitText";
-import AppGallery from "@/components/AppGallery";
-import AppStore from "@/components/AppStore";
-import { Input } from "@/components/Input";
-import PlayStore from "@/components/PlayStore";
-import Image from "next/image";
-import { TbArrowRight, TbMail, TbPhone, TbSearch } from "react-icons/tb";
+import { TbSearch } from "react-icons/tb";
 
 const Hero = () => {
   return (
