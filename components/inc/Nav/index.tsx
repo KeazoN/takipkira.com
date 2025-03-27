@@ -12,12 +12,17 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if (pathname.includes("/sozlesmeler")) {
+        setHasScrolled(true);
+        return;
+      }
       setHasScrolled(window.scrollY > 0);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   if (pathname.includes("/uye-ol")) {
     return <></>;

@@ -147,30 +147,24 @@ const Footer = () => {
               © 2025 Takip Kira. Tüm hakları saklıdır.
             </p>
             <div className="flex gap-6">
-              <a
-                href="#"
+              <Link
+                href="/sozlesmeler/gizlilik-politikasi"
                 className="text-gray-600 hover:text-primary transition-colors"
               >
                 Gizlilik Politikası
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/sozlesmeler/kullanim-sartlari"
                 className="text-gray-600 hover:text-primary transition-colors"
               >
                 Kullanım Şartları
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/sozlesmeler/kvkk-sozlesmesi"
                 className="text-gray-600 hover:text-primary transition-colors"
               >
                 KVKK Sözleşmesi
-              </a>
-              <a
-                href="#"
-                className="text-gray-600 hover:text-primary transition-colors"
-              >
-                Kullanım Şartları
-              </a>
+              </Link>
             </div>
           </div>
         </div>
