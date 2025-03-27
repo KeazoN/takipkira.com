@@ -1,9 +1,8 @@
-import AppGallery from "@/components/AppGallery";
 import AppStore from "@/components/AppStore";
 import PlayStore from "@/components/PlayStore";
 import Image from "next/image";
 
-const Hero = () => {
+const GoMobile = () => {
   return (
     <section className="container mt-20 flex items-center justify-center max-w-[1450px] relative w-full gap-20 rounded-3xl h-[400px] bg-gradient-to-bl from-sky-50 to-sky-100">
       <div className="flex flex-col items-start gap-8 w-[40%]">
@@ -17,7 +16,6 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-4">
           <PlayStore className="w-36 h-fit !top-0" />
           <AppStore className="w-36 h-fit !top-0" />
-          <AppGallery className="w-36 h-fit !top-0" />
         </div>
       </div>
       <div className="relative">
@@ -33,4 +31,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default GoMobile;

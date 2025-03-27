@@ -1,6 +1,4 @@
 import RotatingText from "@/components/animations/RotatingText";
-import SplitText from "@/components/animations/SplitText";
-import AppGallery from "@/components/AppGallery";
 import AppStore from "@/components/AppStore";
 import PlayStore from "@/components/PlayStore";
 import Image from "next/image";
@@ -61,7 +59,6 @@ const Hero = () => {
         <div className="grid grid-cols-3 gap-4 absolute bottom-24">
           <PlayStore />
           <AppStore />
-          <AppGallery />
         </div>
       </div>
       <div className="relative">

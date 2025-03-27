@@ -1,10 +1,13 @@
+import FAQ from "./FAQ";
 import Hero from "./Hero";
-import Specials from "./Specials";
+import Tabs from "./Tabs";
+
 const Contact = () => {
   return (
-    <div className="flex flex-col gap-20 mb-20">
+    <div className="flex flex-col gap-10 mb-20">
       <Hero />
-      <Specials />
+      <Tabs />
+      <FAQ />
     </div>
   );
 };
