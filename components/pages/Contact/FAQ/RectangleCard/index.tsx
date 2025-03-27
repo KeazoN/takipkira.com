@@ -15,7 +15,7 @@ const RectangleCard = ({
 
   return (
     <div
-      className="p-6 border border-gray-200 rounded-lg flex flex-col gap-4 cursor-pointer"
+      className="p-6 border border-gray-200 rounded-3xl flex flex-col gap-4 cursor-pointer"
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center justify-between">

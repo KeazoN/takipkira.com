@@ -6,7 +6,7 @@ const SquareCard = ({
   description: string;
 }) => {
   return (
-    <div className="p-6 border border-gray-200 rounded-lg flex flex-col gap-4">
+    <div className="p-6 border border-gray-200 rounded-3xl flex flex-col gap-4">
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
