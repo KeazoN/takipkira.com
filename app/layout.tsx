@@ -4,7 +4,6 @@ import "./globals.css";
 import Nav from "@/components/inc/Nav";
 import Footer from "@/components/inc/Footer";
 import WhatsappButton from "@/components/WhatsappButton";
-import LocomotiveScroll from "@/providers/LocomotiveScroll";
 export const metadata: Metadata = {
   title: "Takip Kira",
   description: "Takip Kira",
@@ -23,12 +22,10 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={`${outfit.variable} antialiased text-[#010F34]`}>
-        <LocomotiveScroll>
-          <Nav />
-          {children}
-          <WhatsappButton />
-          <Footer />
-        </LocomotiveScroll>
+        <Nav />
+        {children}
+        <WhatsappButton />
+        <Footer />
       </body>
     </html>
   );

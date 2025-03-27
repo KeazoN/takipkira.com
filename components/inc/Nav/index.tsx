@@ -10,27 +10,18 @@ const Nav = () => {
   const pathname = usePathname();
   const [hasScrolled, setHasScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   if (pathname.includes("/uye-ol")) {
     return <></>;
   }
-
-  useEffect(() => {
-    const scrollContainer = document.querySelector("[data-scroll-container]");
-    const locomotiveScroll = (scrollContainer as any)?.__locomotiveScroll;
-
-    if (locomotiveScroll) {
-      locomotiveScroll.on("scroll", (args: any) => {
-        const { scroll } = args;
-        setHasScrolled(scroll.y > 0);
-      });
-    }
-
-    return () => {
-      if (locomotiveScroll) {
-        locomotiveScroll.off("scroll");
-      }
-    };
-  }, []);
 
   return (
     <nav
