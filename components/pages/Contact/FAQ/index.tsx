@@ -1,4 +1,3 @@
-import GoMobile from "../../Home/GoMobile";
 import RectangleCard from "./RectangleCard";
 import SquareCard from "./SquareCard";
 
@@ -39,7 +38,6 @@ const FAQ = () => {
         title="Kira bedelinin güncel piyasa değerine uygun olup olmadığını nasıl öğrenebilirim?"
         description="Takip Kira, SPK lisanslı değerleme uzmanları tarafından hazırlanan 'Kira Ekspertiz Raporu' ile mülkünüzün kira bedelini belirler. Bu rapor sayesinde mülkünüzün gerçek değerini öğrenebilirsiniz."
       />
-      <GoMobile />
     </div>
   );
 };

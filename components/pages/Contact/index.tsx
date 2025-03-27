@@ -3,6 +3,7 @@ import Card from "./Card";
 import FAQ from "./FAQ";
 import Hero from "./Hero";
 import Tabs from "./Tabs";
+import GoMobile from "../Home/GoMobile";
 
 const Contact = () => {
   return (
@@ -10,6 +11,7 @@ const Contact = () => {
       <Hero />
       <Tabs />
       <FAQ />
+      <GoMobile />
       <div className="container max-w-[1255px] mx-auto mt-24">
         <div className="grid grid-cols-2 gap-8">
           <Card

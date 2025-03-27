@@ -5,6 +5,7 @@ import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { TbCalculator } from "react-icons/tb";
 
 const Nav = () => {
   const pathname = usePathname();
