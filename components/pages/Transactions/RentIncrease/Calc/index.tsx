@@ -9,6 +9,7 @@ import {
   TbCalculator,
   TbCurrencyLira,
   TbHome,
+  TbInfoCircle,
 } from "react-icons/tb";
 import { Select } from "@/components/Select";
 import Button from "@/components/Button";
@@ -102,6 +103,12 @@ const Calc = () => {
             <p className="text-gray-600 mt-1">
               Kira artış oranınızı hesaplamak için aşağıdaki formu doldurun.
             </p>
+            <div className="flex items-center gap-2 p-2 rounded-lg mt-2 bg-sky-50 text-sky-700 border border-sky-100">
+              <TbInfoCircle className="w-3 h-3 text-primary" />
+              <p className="text-xs">
+                Mart 2025 kira artışı için açıklanan yüzde %53,83 olmuştur.
+              </p>
+            </div>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className="relative">
@@ -194,8 +201,8 @@ const Calc = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+            <div className="grid grid-cols-2 gap-4 h-full">
+              <div className="bg-white p-4 rounded-2xl h-full shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
                 <h3 className="text-lg font-semibold mb-3 text-gray-700">
                   Yeni Kira Tutarı
                 </h3>
@@ -209,7 +216,7 @@ const Calc = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+              <div className="bg-white p-4 rounded-2xl h-full shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
                 <h3 className="text-lg font-semibold mb-3 text-gray-700">
                   Artış Miktarı
                 </h3>
@@ -228,7 +235,7 @@ const Calc = () => {
               </div>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
+            <div className="bg-white p-4 rounded-2xl h-full shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-semibold text-gray-700">
                   Artış Oranı
