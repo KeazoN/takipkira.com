@@ -14,40 +14,6 @@ const navLinks = [
   {
     title: "Hizmetlerimiz",
     href: "/hizmetlerimiz",
-    dropdown: [
-      {
-        title: "Güvenli Kiralama",
-        href: "/hizmetlerimiz/guvenli-kiralama",
-      },
-      {
-        title: "Kira & Tahsilat",
-        href: "/hizmetlerimiz/kira-ve-tahsilat",
-      },
-      {
-        title: "Mülkün Fiziki Durumu",
-        href: "/hizmetlerimiz/mulek-fiziki-durumu",
-      },
-      {
-        title: "Sözleşme Durumu",
-        href: "/hizmetlerimiz/sozlesme-durumu",
-      },
-      {
-        title: "Risk Koruması",
-        href: "/hizmetlerimiz/risk-korumasi",
-      },
-      {
-        title: "Ödeme Takip",
-        href: "/hizmetlerimiz/odeme-takip",
-      },
-      {
-        title: "Online Şube",
-        href: "/hizmetlerimiz/online-sube",
-      },
-      {
-        title: "Tüm Hizmetler",
-        href: "/hizmetlerimiz",
-      },
-    ],
   },
   {
     title: "İşlemler",
