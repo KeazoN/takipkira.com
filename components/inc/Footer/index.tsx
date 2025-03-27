@@ -165,6 +165,12 @@ const Footer = () => {
               >
                 KVKK Sözleşmesi
               </Link>
+              <Link
+                href="/sozlesmeler/cookie-politikasi"
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                Cookie Politikası
+              </Link>
             </div>
           </div>
         </div>
