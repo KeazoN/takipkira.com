@@ -34,11 +34,6 @@ const Nav = () => {
 
   return (
     <nav
-      data-scroll
-      data-scroll-sticky
-      data-scroll-target="body"
-      data-scroll-speed="1"
-      data-scroll-delay="0.1"
       className={`fixed top-0 left-0 py-8 w-full z-50 transition-all duration-300 ${
         hasScrolled
           ? "bg-white/80 backdrop-blur-lg border-b border-gray-200 !py-3"
