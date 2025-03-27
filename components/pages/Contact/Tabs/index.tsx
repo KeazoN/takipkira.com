@@ -15,13 +15,7 @@ const Tabs = () => {
               Mülk Sahibi
             </li>
             <li className="px-6 py-2 rounded-full cursor-pointer border border-gray-200 transition hover:bg-gray-100 font-medium">
-              Danışman
-            </li>
-            <li className="px-6 py-2 rounded-full cursor-pointer border border-gray-200 transition hover:bg-gray-100 font-medium">
               Kiracı
-            </li>
-            <li className="px-6 py-2 rounded-full cursor-pointer border border-gray-200 transition hover:bg-gray-100 font-medium">
-              Tadilat
             </li>
           </ul>
         </div>

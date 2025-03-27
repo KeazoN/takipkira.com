@@ -1,7 +1,7 @@
-import React from "react";
+import RentIncrease from "@/components/pages/Transactions/RentIncrease";
 
 const RentIncreaseRatePage = () => {
-  return <div className="mb-20">Kira Artış Oranı Hesapla</div>;
+  return <RentIncrease />;
 };
 
 export default RentIncreaseRatePage;
