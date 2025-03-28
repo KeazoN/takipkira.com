@@ -5,10 +5,12 @@ import NavLinks from "./NavLinks";
 import NavLogo from "./NavLogo";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { TbMenu2, TbX } from "react-icons/tb";
 
 const Nav = () => {
   const pathname = usePathname();
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,14 @@ const Nav = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMobileMenuOpen]);
+
   if (pathname.includes("/uye-ol")) {
     return <></>;
   }
@@ -38,10 +48,51 @@ const Nav = () => {
     >
       <div className="container max-w-[1450px] flex items-center justify-between px-8 gap-10">
         <NavLogo />
-        <div className="flex items-center gap-8">
+
+        <div className="hidden lg:flex items-center gap-8">
           <NavLinks />
           <NavButtons />
         </div>
+
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden p-2 hover:bg-gray-100 rounded-full transition"
+        >
+          {isMobileMenuOpen ? (
+            <TbX className="w-6 h-6" />
+          ) : (
+            <TbMenu2 className="w-6 h-6" />
+          )}
+        </button>
+
+        <div
+          className={`
+          fixed top-0 right-0 w-[300px] h-full bg-white shadow-xl 
+          transform overflow-y-auto transition-transform duration-300 ease-in-out
+          lg:hidden
+          z-10
+          ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}
+        `}
+        >
+          <div className="flex flex-col h-full py-10 px-6 gap-10">
+            <div className="flex items-center justify-center w-full">
+              <NavLogo />
+            </div>
+            <div className="flex flex-col gap-6">
+              <NavLinks />
+              <div className="border-t pt-6">
+                <NavButtons />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {isMobileMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 lg:hidden z-0"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
       </div>
     </nav>
   );

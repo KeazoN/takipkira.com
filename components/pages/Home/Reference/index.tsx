@@ -25,24 +25,24 @@ const Reference = () => {
     { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
   ];
   return (
-    <section className="mt-10">
+    <section className="mt-10 px-4 sm:px-6 lg:px-8">
       <div className="container flex items-center justify-center flex-col gap-10 max-w-[1255px]">
         <div className="flex items-center justify-center w-full">
-          <div className="flex items-center justify-center flex-col gap-2">
-            <h2 className="text-4xl font-extrabold">
+          <div className="flex items-center justify-center flex-col gap-2 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold max-w-3xl">
               Onlarla Çalışıyoruz,{" "}
               <span className="text-primary">Gücünüze Güç Katıyoruz!</span>
             </h2>
-            <p className="text-gray-500">
+            <p className="text-gray-500 text-sm sm:text-base max-w-2xl">
               İşletmelerinizin güvenliğini sağlamak için güvenilir bir partner
               arıyorsanız, bizimle iletişime geçin.
             </p>
           </div>
         </div>
-        <div className="overflow-hidden whitespace-nowrap relative">
+        <div className="overflow-hidden whitespace-nowrap relative w-full">
           <div className="w-full relative">
-            <div className="absolute top-0 left-0 w-[100px] h-full bg-gradient-to-r from-white to-transparent z-10"></div>
-            <div className="absolute top-0 right-0 w-[100px] h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+            <div className="absolute top-0 left-0 w-[50px] sm:w-[100px] h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute top-0 right-0 w-[50px] sm:w-[100px] h-full bg-gradient-to-l from-white to-transparent z-10"></div>
             <motion.div
               animate={{
                 x: [0, -1920],
@@ -52,7 +52,7 @@ const Reference = () => {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="inline-flex items-center justify-start gap-20"
+              className="inline-flex items-center justify-start gap-10 sm:gap-20"
             >
               {references.map((image, index) => (
                 <Image
@@ -61,7 +61,7 @@ const Reference = () => {
                   alt={image.alt}
                   width={150}
                   height={50}
-                  className="h-10 w-fit object-contain"
+                  className="h-6 sm:h-8 md:h-10 w-fit object-contain"
                 />
               ))}
             </motion.div>

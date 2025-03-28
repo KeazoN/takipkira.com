@@ -77,11 +77,11 @@ const NavLinks = () => {
   }, [openDropdown]);
 
   return (
-    <ul className="flex items-center justify-center gap-6 col-span-3">
+    <ul className="flex lg:items-center lg:justify-center flex-col lg:flex-row gap-6 col-span-3">
       {navLinks.map((link, index) => (
         <li
           key={index}
-          className={link.dropdown ? "relative" : ""}
+          className={`${link.dropdown ? "relative" : ""} w-full lg:w-auto`}
           ref={(el) => {
             if (link.dropdown) {
               dropdownRefs.current[link.title] = el;
@@ -91,7 +91,7 @@ const NavLinks = () => {
           {link.dropdown ? (
             <>
               <button
-                className={`flex items-center gap-1 ${
+                className={`flex items-center gap-1 w-full ${
                   pathname.startsWith(link.href) ? "text-primary" : ""
                 }`}
                 onClick={() => {
@@ -115,7 +115,7 @@ const NavLinks = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 py-2 bg-white shadow-lg rounded-lg min-w-[200px]"
+                    className="lg:absolute lg:top-full lg:left-0 mt-2 py-2 bg-white lg:shadow-lg lg:rounded-lg min-w-[200px] w-full"
                   >
                     {link.dropdown.map((dropdownItem, dropdownIndex) => (
                       <li key={dropdownIndex}>
@@ -137,8 +137,8 @@ const NavLinks = () => {
               </AnimatePresence>
             </>
           ) : (
-            <Link href={link.href}>
-              <p className={pathname === link.href ? "text-primary" : ""}>
+            <Link href={link.href} className="block w-full">
+              <p className={`${pathname === link.href ? "text-primary" : ""}`}>
                 {link.title}
               </p>
             </Link>
