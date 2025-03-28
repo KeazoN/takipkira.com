@@ -1,17 +1,44 @@
-import ContentHero from "@/components/ContentHero";
 import React from "react";
 import Services from "../Home/Services";
+import Hero from "./Hero";
+import ScrollTrigger from "./ScrollTrigger";
+import GoMobile from "../Home/GoMobile";
+import { TbHeadphones } from "react-icons/tb";
+import Card from "../Contact/Card";
+import { TbUserPlus } from "react-icons/tb";
 
 const ServicesPageDetail = () => {
   return (
-    <>
-      <ContentHero
-        title="Size Özel"
-        title2="Hizmetlerimiz"
-        description="Hizmetlerimiz hakkında bilgi almak için lütfen aşağıdaki butonlara tıklayınız."
-      />
+    <section className="mb-10">
+      <Hero />
       <Services />
-    </>
+      <ScrollTrigger />
+      <div className="my-32">
+        <GoMobile />
+      </div>
+      <div className="container max-w-[1255px] mx-auto mt-24">
+        <div className="grid grid-cols-2 gap-8">
+          <Card
+            title="Hemen Müşteri Ol!"
+            description="Şimdi Takip Kira müşterisi olun ve kazançlarınızı izleyin."
+            buttonText="Müşteri Ol"
+            icon={<TbUserPlus className="w-5 h-5" />}
+            backgroundColor="bg-secondary text-white"
+            image="/assets/img/svg/hand.svg"
+            buttonColor="bg-primary"
+          />
+          <Card
+            title="Müşteri Temsilcimiz!"
+            description="Sorunuzun cevabı yok mu? Müşteri Temsilcimize ulaşın."
+            buttonText="Müşteri Temsilcisi"
+            icon={<TbHeadphones className="w-5 h-5" />}
+            backgroundColor="bg-[#0b3636] text-white"
+            image="/assets/img/svg/customerService.svg"
+            buttonColor="bg-success"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
