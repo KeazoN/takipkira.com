@@ -24,20 +24,16 @@ const navLinks = [
         href: "/islemler/kira-artis-orani",
       },
       {
-        title: "Konut Kredisi Hesapla",
-        href: "/islemler/konut-kredisi-hesapla",
+        title: "Kira Sözleşmesi Oluştur",
+        href: "/islemler/kira-sozlesmesi-olustur",
       },
       {
-        title: "İşyeri Kredisi Hesapla",
-        href: "/islemler/isyeri-kredisi-hesapla",
+        title: "Tahliye Tahaatütnamesi Oluştur",
+        href: "/islemler/tahliye-tahaatutnamesi-olustur",
       },
       {
-        title: "Fırsat Yatırımlar",
-        href: "/islemler/firsat-yatirimlari",
-      },
-      {
-        title: "Online Kira Ödeme",
-        href: "/islemler/online-kira-odeme",
+        title: "Kira Gelir Beyanı Oluştur",
+        href: "/islemler/kira-gelir-beyani-olustur",
       },
     ],
   },
