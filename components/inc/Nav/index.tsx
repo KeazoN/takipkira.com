@@ -12,7 +12,7 @@ const Nav = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (pathname.includes("/sozlesmeler")) {
+      if (pathname.includes("/sozlesmeler") || pathname.includes("/blog")) {
         setHasScrolled(true);
         return;
       }

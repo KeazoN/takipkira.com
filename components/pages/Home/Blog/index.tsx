@@ -1,5 +1,5 @@
 import { TbArrowRight } from "react-icons/tb";
-import Card from "./Card";
+import Card from "../../Blog/Card";
 
 const Blog = () => {
   return (
