@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { TbArrowRight, TbPhoto } from "react-icons/tb";
 
 const Card = () => {
@@ -25,10 +26,13 @@ const Card = () => {
         </p>
         <div className="flex items-center justify-between">
           <span className="text-sm text-gray-500">5 Mart 2024</span>
-          <button className="text-primary font-medium flex items-center gap-2">
+          <Link
+            href="/blog/detay"
+            className="text-primary font-medium flex items-center gap-2"
+          >
             Devamını Oku
             <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
