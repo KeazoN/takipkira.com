@@ -11,17 +11,16 @@ const Hero = () => {
         <div className="flex flex-col items-start gap-6 w-[45%] max-lg:w-full max-lg:items-center max-lg:text-center">
           <span className="bg-sky-200 font-bold p-2 pr-4 text-sm flex items-center justify-center gap-2 rounded-full max-lg:text-xs max-lg:flex-wrap">
             <span className="px-2 py-1 bg-white rounded-full">Hesapla</span>
-            Konut ve Arsa Kredisi Hesaplamak İçin Tıklayın!
+            Kira Artışı İçin Tıklayın!
           </span>
           <h1 className="flex flex-col text-nowrap text-5xl transition-all duration-300 font-extrabold gap-2 max-lg:text-4xl max-sm:text-3xl">
             Takip Kira ile Kolayı Var
             <RotatingText
               texts={[
-                "Mülk Takibi Bizde!",
-                "Kira Takibi Bizde!",
-                "Sözleşme Takibi Bizde!",
-                "Tadilat Takibi Bizde!",
-                "Sözleşme Takibi Bizde!",
+                "Mülk Takibi!",
+                "Kira Takibi!",
+                "Sözleşme Takibi!",
+                "Tadilat Takibi!",
               ]}
               mainClassName="transition-all duration-1000 ease-in-out w-full text-nowrap px-4 sm:px-2 md:px-3 bg-primary text-white overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg"
               staggerFrom={"last"}
