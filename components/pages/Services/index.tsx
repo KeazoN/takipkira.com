@@ -1,17 +1,17 @@
 import React from "react";
-import Services from "../Home/Services";
 import Hero from "./Hero";
 import ScrollTrigger from "./ScrollTrigger";
 import GoMobile from "../Home/GoMobile";
 import { TbHeadphones } from "react-icons/tb";
 import Card from "../Contact/Card";
 import { TbUserPlus } from "react-icons/tb";
+import Service from "./Service";
 
 const ServicesPageDetail = () => {
   return (
     <section className="mb-10">
       <Hero />
-      <Services />
+      <Service />
       <ScrollTrigger />
       <div className="my-32">
         <GoMobile />

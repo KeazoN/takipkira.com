@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { TbArrowRight } from "react-icons/tb";
 interface CardProps {
   title: string;
-  description?: string;
+  description: string;
   icon: ReactNode;
 }
 
@@ -14,9 +14,7 @@ const Card = ({ title, description, icon }: CardProps) => {
       </span>
       <div className="flex flex-col gap-2">
         <h3 className="text-2xl font-bold text-center">{title}</h3>
-        {description && (
-          <p className="text-gray-500 text-center">{description}</p>
-        )}
+        <p className="text-gray-500 text-center">{description}</p>
       </div>
       <button className="bg-primary text-white px-8 mt-2 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75">
         Daha Fazla

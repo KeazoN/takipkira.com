@@ -11,7 +11,7 @@ import {
 } from "react-icons/tb";
 import Card from "./Card";
 
-const Services = () => {
+const Service = () => {
   return (
     <section className="mt-20 px-4 sm:px-6 lg:px-8">
       <div className="container flex items-center justify-center flex-col gap-10 max-w-[1255px]">
@@ -36,31 +36,42 @@ const Services = () => {
           <Card
             icon={<TbHome2 className="w-8 h-8" />}
             title="Güvenli Kiralama"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
-          <Card icon={<TbCash className="w-8 h-8" />} title="Kira & Tahsilat" />
+          <Card
+            icon={<TbCash className="w-8 h-8" />}
+            title="Kira & Tahsilat"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+          />
           <Card
             icon={<TbHomeShield className="w-8 h-8" />}
             title="Mülkün Fiziki Durumu"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
           <Card
             icon={<TbFileText className="w-8 h-8" />}
             title="Sözleşme Takibi"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
           <Card
             icon={<TbShieldCheck className="w-8 h-8" />}
             title="Risk Koruması"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
           <Card
             icon={<TbEyeDollar className="w-8 h-8" />}
             title="Ödeme Takip"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
           <Card
             icon={<TbBuildingBank className="w-8 h-8" />}
             title="Online Şube"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
           <Card
             icon={<TbSitemap className="w-8 h-8" />}
             title="Daha Fazla Hizmet"
+            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
           />
         </div>
       </div>
@@ -68,4 +79,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Service;
