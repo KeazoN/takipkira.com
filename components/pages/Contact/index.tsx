@@ -12,8 +12,8 @@ const Contact = () => {
       <Tabs />
       <FAQ />
       <GoMobile />
-      <div className="container max-w-[1255px] mx-auto mt-24">
-        <div className="grid grid-cols-2 gap-8">
+      <div className="container max-w-[1255px] mx-auto mt-24 max-lg:mt-16 max-md:mt-12 max-sm:mt-8 px-4">
+        <div className="grid grid-cols-2 max-md:grid-cols-1 gap-8 max-lg:gap-6 max-md:gap-4">
           <Card
             title="Hemen Müşteri Ol!"
             description="Şimdi Takip Kira müşterisi olun ve kazançlarınızı izleyin."
