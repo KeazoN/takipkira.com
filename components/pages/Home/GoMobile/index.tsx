@@ -20,7 +20,7 @@ const GoMobile = () => {
       </div>
       <div className="relative">
         <Image
-          src="/assets/img/mobile/androidAndIosMockup.png"
+          src="/assets/img/mobile/mobile.webp"
           alt="Mobil Uygulama Görünümü"
           width={600}
           height={600}

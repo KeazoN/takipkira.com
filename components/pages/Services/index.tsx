@@ -16,8 +16,8 @@ const ServicesPageDetail = () => {
       <div className="my-32">
         <GoMobile />
       </div>
-      <div className="container max-w-[1255px] mx-auto mt-24">
-        <div className="grid grid-cols-2 gap-8">
+      <div className="container max-w-[1255px] mx-auto mt-24 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <Card
             title="Hemen Müşteri Ol!"
             description="Şimdi Takip Kira müşterisi olun ve kazançlarınızı izleyin."

@@ -23,6 +23,7 @@ const services = [
         *Tüm ödemeler yasal mevzuata uygun şekilde kayıt altına alınır ve raporlanır.
       </p>
     `,
+    image: "/images/services/rent-collection.jpg",
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ const services = [
         *Tüm bakım ve onarım işlemleri uzman ekipler tarafından gerçekleştirilir ve garanti kapsamında yapılır.
       </p>
     `,
+    image: "/images/services/maintenance.jpg",
   },
   {
     id: 3,
@@ -67,6 +69,7 @@ const services = [
         Kiracı değerlendirme sürecimiz, mülk sahiplerini olası risklerden korumak ve uzun vadeli, güvenilir kiralama ilişkileri kurmak için tasarlanmıştır.
       </p>
     `,
+    image: "/images/services/tenant-evaluation.jpg",
   },
   {
     id: 4,
@@ -91,6 +94,7 @@ const services = [
         Yasal destek hizmetlerimiz, mülk sahiplerinin hukuki haklarını korumak ve olası riskleri minimize etmek için tasarlanmıştır. Güncel mevzuat değişikliklerini takip ederek, sözleşmelerinizin ve işlemlerinizin her zaman yasal çerçevede kalmasını sağlıyoruz.
       </p>
     `,
+    image: "/images/services/legal-support.jpg",
   },
   {
     id: 5,
@@ -114,6 +118,7 @@ const services = [
         Mülk denetimi hizmetlerimiz, mülk sahiplerinin mülklerinin sağlığını ve değerini sürekli olarak kontrol etmek için tasarlanmıştır.
       </p>
     `,
+    image: "/images/services/property-inspection.jpg",
   },
   {
     id: 6,
@@ -136,6 +141,7 @@ const services = [
         Acil durum yönetimi hizmetlerimiz, mülk sahiplerinin mülklerinin güvenliği ve sağlığı için acil durumlarda hızlı ve profesyonel yanıt vermek için tasarlanmıştır.
       </p>
     `,
+    image: "/images/services/emergency.jpg",
   },
   {
     id: 7,
@@ -159,6 +165,7 @@ const services = [
         Finansal raporlama hizmetlerimiz, mülk sahiplerinin finansal durumlarını şeffaf ve detaylı bir şekilde takip etmeleri için tasarlanmıştır.
       </p>
     `,
+    image: "/images/services/financial-reporting.jpg",
   },
   {
     id: 8,
@@ -182,6 +189,7 @@ const services = [
         Pazarlama hizmetlerimiz, mülkünüzün potansiyel kiracılara en etkili şekilde tanıtılması için tasarlanmıştır.
       </p>
     `,
+    image: "/images/services/marketing.jpg",
   },
   {
     id: 9,
@@ -205,6 +213,7 @@ const services = [
         Sigorta yönetimi hizmetlerimiz, mülkünüzün olası risklere karşı tam koruma altında olması için tasarlanmıştır.
       </p>
     `,
+    image: "/images/services/insurance.jpg",
   },
   {
     id: 10,
@@ -228,30 +237,7 @@ const services = [
         Online yönetim platformumuz, mülk sahiplerinin tüm işlemlerini dijital ortamda kolayca yönetmeleri için tasarlanmıştır.
       </p>
     `,
-  },
-  {
-    id: 11,
-    title: "Kira Tahsilatı",
-    description: `
-      <h3>Profesyonel Kira Tahsilat ve Takip Hizmeti</h3>
-      <p>
-        Kira ödemelerinin düzenli ve zamanında tahsilatını sağlıyoruz.
-      </p>
-      <ul>
-        <li>Otomatik ödeme sistemleri</li>
-        <li>Gecikme bildirimleri</li>
-        <li>Tahsilat raporlaması</li>
-        <li>Yasal süreç yönetimi</li>
-        <li>Ödeme planı oluşturma</li>
-      </ul>
-      <p>
-        *Tüm tahsilat işlemleri yasal mevzuata uygun şekilde yürütülür.
-      </p>
-      <p>
-        Kira tahsilatı hizmetlerimiz, mülk sahiplerinin kira gelirlerini düzenli ve güvenli bir şekilde almalarını sağlamak için tasarlanmıştır.
-      </p>
-    `,
-    image: "/images/services/rent-collection.jpg",
+    image: "/images/services/online-management.jpg",
   },
 ];
 
@@ -280,9 +266,9 @@ const ScrollTrigger = () => {
   }, []);
 
   return (
-    <section className="container max-w-[1255px] mx-auto mt-20">
-      <div className="flex items-stretch justify-between gap-10">
-        <div className="w-[60%] flex flex-col gap-20 py-10">
+    <section className="container max-w-[1255px] mx-auto mt-20 px-4 lg:px-0">
+      <div className="flex flex-col lg:flex-row items-stretch justify-between gap-10">
+        <div className="w-full lg:w-[60%] flex flex-col gap-20 py-10">
           {services.map((service, index) => (
             <div
               key={service.id}
@@ -291,19 +277,32 @@ const ScrollTrigger = () => {
                 return undefined;
               }}
             >
-              <h3 className="text-3xl font-bold mb-3 flex items-center gap-2">
-                <span className="text-primary text-6xl">•</span>
+              <div className="lg:hidden mb-6">
+                <div className="w-full h-[250px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
+                  {service.image ? (
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <TbPhoto size={32} />
+                  )}
+                </div>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 flex items-center gap-2">
+                <span className="text-primary text-4xl md:text-6xl">•</span>
                 {service.title}
               </h3>
               <div
-                className="prose prose-lg"
+                className="prose prose-sm md:prose-lg max-w-none"
                 dangerouslySetInnerHTML={{ __html: service.description }}
               />
             </div>
           ))}
         </div>
-        <div className="sticky h-full top-24 w-[40%]">
-          <div className="w-full h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
+        <div className="hidden lg:block w-full lg:w-[40%] lg:sticky lg:h-full lg:top-24">
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
             {services[activeService]?.image ? (
               <img
                 src={services[activeService]?.image}
