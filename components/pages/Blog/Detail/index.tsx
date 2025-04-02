@@ -49,7 +49,7 @@ const BlogDetail = ({ post }: { post: IBlogPost }) => {
   };
 
   return (
-    <div className="container max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-24">
+    <div className="container max-w-[1255px] mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-24">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <article className="lg:col-span-2">
           <div className="max-w-3xl">
