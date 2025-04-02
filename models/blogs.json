@@ -4,7 +4,7 @@
     "title": "Takip Kira ile Dijital Dünyaya Merhaba!",
     "slug": "takip-kira-ile-dijital-dunyaya-yeni-bir-merhaba",
     "excerpt": "Modern kira takip sistemlerinin mülk sahiplerine sunduğu avantajlar ve dijital dönüşümün gayrimenkul yönetimine etkileri.",
-    "content": "content/sistemimiz-yenilendi.mdx",
+    "content": "/content/sistemimiz-yenilendi.mdx",
     "author": {
       "name": "BT Takımı",
       "avatar": "/assets/img/authors/it-team.jpg",
@@ -23,7 +23,7 @@
     "title": "Kira Sözleşmesi Nedir? Önemli Bilgiler",
     "slug": "kira-sozlesmesi-nedir-kapsamli-rehber",
     "excerpt": "Kira sözleşmesi nedir, nasıl hazırlanır, yasal gereklilikleri nelerdir? Kiracı ve ev sahibi hakları dahil tüm detaylarıyla kira sözleşmesi rehberi.",
-    "content": "content/kira-sozlesmesi-nedir.mdx",
+    "content": "/content/kira-sozlesmesi-nedir.mdx",
     "author": {
       "name": "Zeynep Kaya",
       "avatar": "/assets/img/authors/zeynep-kaya.jpg",
@@ -47,7 +47,7 @@
     "title": "Tahliye Taahhütnamesi Nedir? Kapsamlı Rehber",
     "slug": "tahliye-taahhutnamesi-nedir-kapsamli-rehber",
     "excerpt": "Tahliye taahhütnamesi nedir, nasıl hazırlanır, yasal geçerliliği nedir? Ev sahibi ve kiracılar için tüm detaylarıyla tahliye taahhütnamesi rehberi.",
-    "content": "content/tahliye-taahatutnamesi-nedir.mdx",
+    "content": "/content/tahliye-taahatutnamesi-nedir.mdx",
     "author": {
       "name": "Zeynep Kaya",
       "avatar": "/assets/img/authors/zeynep-kaya.jpg",
@@ -71,7 +71,7 @@
     "title": "Emlak Vergisi Nedir ve Nasıl Ödenir?",
     "slug": "emlak-vergisi-nedir-ve-nasil-odenir",
     "excerpt": "Emlak vergisi nedir, kimler ödemekle yükümlüdür, nasıl hesaplanır ve nereden ödenir? Tüm detaylarıyla emlak vergisi rehberi.",
-    "content": "content/emlak-vergisi-nedir.mdx",
+    "content": "/content/emlak-vergisi-nedir.mdx",
     "author": {
       "name": "Zeynep Kaya",
       "avatar": "/assets/img/authors/zeynep-kaya.jpg",
