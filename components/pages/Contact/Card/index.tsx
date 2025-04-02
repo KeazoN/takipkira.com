@@ -31,14 +31,26 @@ const Card = ({
           {icon} {buttonText}
         </button>
       </div>
-      <div className="w-1/2 max-lg:w-full flex items-end justify-end max-lg:justify-center">
-        <Image
-          src={image}
-          alt="card"
-          width={500}
-          height={400}
-          className="h-40 max-sm:h-32 w-fit object-cover"
-        />
+      <div
+        className={`w-1/2 max-lg:w-full flex items-end justify-end max-lg:justify-center h-[150px]`}
+      >
+        {image === "/assets/img/svg/mobile.webp" ? (
+          <Image
+            src={image}
+            alt="card"
+            width={500}
+            height={400}
+            className="h-36 max-sm:h-32 w-fit object-cover"
+          />
+        ) : (
+          <Image
+            src={image}
+            alt="card"
+            width={500}
+            height={400}
+            className="h-48 relative top-[26px] left-0 max-sm:h-32 w-fit object-cover"
+          />
+        )}
       </div>
     </div>
   );

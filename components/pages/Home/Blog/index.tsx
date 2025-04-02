@@ -1,5 +1,6 @@
 import { TbArrowRight } from "react-icons/tb";
 import Card from "../../Blog/Card";
+import blogData from "@/models/blogs.json";
 
 const Blog = () => {
   return (
@@ -24,14 +25,9 @@ const Blog = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full gap-4 sm:gap-6">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {blogData.map((post) => (
+            <Card key={post.id} post={post} />
+          ))}
         </div>
       </div>
     </section>

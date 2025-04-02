@@ -7,15 +7,12 @@ import { Input } from "@/components/Input";
 import { Textarea } from "@/components/Textarea";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Link from "next/link";
+import { TbArrowLeft, TbBell, TbCash, TbStorm } from "react-icons/tb";
 
 const formSchema = z.object({
   fullName: z.string().min(3, "Ad soyad en az 3 karakter olmalıdır"),
-  phone: z
-    .string()
-    .regex(
-      /^0\(\d{3}\) \d{3} \d{2} \d{2}$/,
-      "Geçerli bir telefon numarası giriniz"
-    ),
+  phone: z.string().min(11, "Telefon numarası en az 11 karakter olmalıdır"),
   email: z.string().email("Geçerli bir e-posta adresi giriniz"),
   message: z.string().optional(),
 });
@@ -81,6 +78,13 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow"
+      >
+        <TbArrowLeft className="w-6 h-6 text-gray-600" />
+      </Link>
+
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -95,11 +99,13 @@ const Register = () => {
               transition={{ delay: 0.2 }}
               className="flex items-center space-x-3 mb-8"
             >
-              <img
-                src="/assets/img/logo/logoPrimary.png"
-                alt="Logo"
-                className="h-12 w-auto"
-              />
+              <Link href="/">
+                <img
+                  src="/assets/img/logo/logoPrimary.png"
+                  alt="Logo"
+                  className="h-12 w-auto cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
               <div className="h-8 w-px bg-gray-300"></div>
               <h2 className="text-2xl font-bold text-gray-800">Üyelik</h2>
             </motion.div>
@@ -214,7 +220,7 @@ const Register = () => {
                       type="submit"
                       disabled={isSubmitting}
                       className="flex-1 py-4 px-6 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-semibold text-lg hover:from-primary/80 hover:to-secondary/80 transition-all shadow-lg hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-70 disabled:cursor-not-allowed relative"
-                    >   
+                    >
                       {isSubmitting ? (
                         <>
                           <span className="opacity-0">Üye Ol</span>
@@ -304,19 +310,7 @@ const Register = () => {
                   className="flex items-start gap-4"
                 >
                   <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                    <TbCash className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-1">
@@ -334,19 +328,7 @@ const Register = () => {
                   className="flex items-start gap-4"
                 >
                   <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
+                    <TbStorm className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-1">
@@ -364,19 +346,7 @@ const Register = () => {
                   className="flex items-start gap-4"
                 >
                   <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                      />
-                    </svg>
+                    <TbBell className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="text-xl font-semibold text-white mb-1">

@@ -237,7 +237,7 @@ const Footer = () => {
                 href="/sozlesmeler/cookie-politikasi"
                 className="text-gray-600 hover:text-primary transition-colors"
               >
-                Cookie Politikası
+                Çerez Politikası
               </Link>
             </div>
           </div>

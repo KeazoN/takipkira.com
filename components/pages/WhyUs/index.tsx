@@ -34,7 +34,7 @@ const WhyUs = () => {
             buttonText="Müşteri Ol"
             icon={<TbUserPlus className="w-5 h-5" />}
             backgroundColor="bg-secondary text-white"
-            image="/assets/img/svg/hand.svg"
+            image="/assets/img/svg/mobile.webp"
             buttonColor="bg-primary"
           />
           <Card
@@ -43,7 +43,7 @@ const WhyUs = () => {
             buttonText="Müşteri Temsilcisi"
             icon={<TbHeadphones className="w-5 h-5" />}
             backgroundColor="bg-[#0b3636] text-white"
-            image="/assets/img/svg/customerService.svg"
+            image="/assets/img/svg/customerService.webp"
             buttonColor="bg-success"
           />
         </div>

@@ -1,7 +1,26 @@
+import Image from "next/image";
 import Categories from "../Categories";
 import FeaturedPosts from "../FeaturedPosts";
+import { IBlogPost } from "@/interface/IBlogPost";
+import fs from "fs";
+import path from "path";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
-const BlogDetail = () => {
+const BlogDetail = ({ post }: { post: IBlogPost }) => {
+  const getMDXContent = () => {
+    try {
+      if (post.content.startsWith("content/")) {
+        const filePath = path.join(process.cwd(), post.content);
+        const content = fs.readFileSync(filePath, "utf8");
+        return <MDXRemote source={content} />;
+      }
+      return <div>{post.content}</div>;
+    } catch (error) {
+      console.error("Error reading MDX file:", error);
+      return <div>Content not found</div>;
+    }
+  };
+
   return (
     <div className="container max-w-[1450px] mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-24">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -9,59 +28,53 @@ const BlogDetail = () => {
           <div className="max-w-3xl">
             <div className="mb-12">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-                Blog Başlığı Burada Olacak
+                {post.title}
               </h1>
               <div className="flex items-center gap-4 text-gray-600">
                 <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-full bg-sky-100" />
-                  <span>Yazar Adı</span>
+                  <Image
+                    src="/assets/img/logo/icon.png"
+                    alt="Takip Kira"
+                    width={40}
+                    height={40}
+                    className="rounded-full bg-sky-100 w-10 h-10"
+                  />
+                  <span>Takip Kira</span>
                 </div>
                 <span>•</span>
-                <time>12 Ocak 2024</time>
+                <time>
+                  {new Date(post.createdAt).toLocaleDateString("tr-TR", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
               </div>
             </div>
 
-            <div className="aspect-video w-full rounded-2xl overflow-hidden mb-12 bg-sky-50" />
+            <div className="aspect-video w-full rounded-2xl overflow-hidden mb-12">
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                width={1200}
+                height={675}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
             <div className="prose prose-lg max-w-none prose-sky prose-headings:font-bold prose-a:text-sky-600 hover:prose-a:text-sky-500">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </p>
-
-              <h2>Alt Başlık Örneği</h2>
-
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
-              </p>
-
-              <blockquote>
-                Bu bir alıntı örneğidir. Önemli notlar veya vurgulanmak istenen
-                içerikler için kullanılabilir.
-              </blockquote>
-
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis.
-              </p>
+              {getMDXContent()}
             </div>
 
             <div className="mt-12 flex flex-wrap gap-2">
-              <span className="px-4 py-2 rounded-full bg-sky-50 text-sky-700 text-sm font-medium">
-                #teknoloji
-              </span>
-              <span className="px-4 py-2 rounded-full bg-sky-50 text-sky-700 text-sm font-medium">
-                #yazılım
-              </span>
-              <span className="px-4 py-2 rounded-full bg-sky-50 text-sky-700 text-sm font-medium">
-                #blog
-              </span>
+              {post.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  className="px-4 py-2 rounded-full bg-sky-50 text-sky-700 text-sm font-medium"
+                >
+                  #{tag}
+                </span>
+              ))}
             </div>
           </div>
         </article>

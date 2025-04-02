@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "title": "Takip Kira ile Dijital Dünyaya Merhaba!",
+    "slug": "takip-kira-ile-dijital-dunyaya-yeni-bir-merhaba",
+    "excerpt": "Modern kira takip sistemlerinin mülk sahiplerine sunduğu avantajlar ve dijital dönüşümün gayrimenkul yönetimine etkileri.",
+    "content": "content/sistemimiz-yenilendi.mdx",
+    "author": {
+      "name": "BT Takımı",
+      "avatar": "/assets/img/authors/it-team.jpg",
+      "title": "BT Takımı"
+    },
+    "coverImage": "/assets/img/blog/sistemimiz-yenilendi.png",
+    "category": "Teknoloji",
+    "tags": ["kira takibi", "dijital dönüşüm", "gayrimenkul yönetimi"],
+    "readingTime": "5 dakika",
+    "createdAt": "2025-04-02T10:30:00Z",
+    "updatedAt": "2025-04-02T10:30:00Z",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Kiracı-Mülk Sahibi İlişkilerini Güçlendirme",
+    "slug": "kiraci-mulk-sahibi-iliskilerini-guclendirme",
+    "excerpt": "Profesyonel kira yönetimi ile kiracı ve mülk sahibi arasındaki ilişkileri nasıl güçlendirebilirsiniz?",
+    "content": "content/blogs/kiraci-mulk-sahibi-iliskilerini-guclendirme.md",
+    "author": {
+      "name": "Zeynep Kaya",
+      "avatar": "/assets/img/authors/zeynep-kaya.jpg",
+      "title": "Kira Yönetimi Danışmanı"
+    },
+    "coverImage": "/assets/img/blogs/kiraci-mulk-sahibi.jpg",
+    "category": "İlişki Yönetimi",
+    "tags": ["kiracı ilişkileri", "mülk yönetimi", "iletişim"],
+    "readingTime": "4 dakika",
+    "createdAt": "2024-01-10T14:20:00Z",
+    "updatedAt": "2024-01-12T09:15:00Z",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Dijital Kira Sözleşmeleri",
+    "slug": "dijital-kira-sozlesmeleri",
+    "excerpt": "E-imza ile dijital kira sözleşmelerinin hazırlanması ve yasal geçerliliği hakkında bilmeniz gerekenler.",
+    "content": "content/blogs/dijital-kira-sozlesmeleri.md",
+    "author": {
+      "name": "Mehmet Demir",
+      "avatar": "/assets/img/authors/mehmet-demir.jpg",
+      "title": "Hukuk Danışmanı"
+    },
+    "coverImage": "/assets/img/blogs/dijital-sozlesme.jpg",
+    "category": "Hukuk",
+    "tags": ["e-imza", "dijital sözleşme", "yasal süreçler"],
+    "readingTime": "6 dakika",
+    "createdAt": "2024-01-05T08:45:00Z",
+    "updatedAt": "2024-01-05T08:45:00Z",
+    "featured": false
+  }
+]
