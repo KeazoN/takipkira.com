@@ -270,19 +270,19 @@ const Register = () => {
                 className="mt-8 text-center text-gray-500 text-sm"
               >
                 Üye olarak{" "}
-                <a
-                  href="#"
+                <Link
+                  href="/sozlesme/gizlilik-politikasi"
                   className="text-primary hover:text-secondary underline"
                 >
                   gizlilik politikamızı
-                </a>{" "}
+                </Link>{" "}
                 ve{" "}
-                <a
-                  href="#"
+                <Link
+                  href="/sozlesme/kullanim-sartlari"
                   className="text-primary hover:text-secondary underline"
                 >
                   kullanım şartlarımızı
-                </a>{" "}
+                </Link>{" "}
                 kabul etmiş olursunuz.
               </motion.div>
             </form>

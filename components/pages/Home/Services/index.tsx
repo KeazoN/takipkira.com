@@ -10,6 +10,7 @@ import {
   TbSitemap,
 } from "react-icons/tb";
 import Card from "./Card";
+import Link from "next/link";
 
 const Services = () => {
   return (
@@ -26,10 +27,10 @@ const Services = () => {
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <button className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto">
-              Hemen Başla
+            <Link href="/hizmetlerimiz" className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto">
+              Tüm Hizmetler
               <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full gap-4">

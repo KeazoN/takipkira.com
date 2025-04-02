@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ReactNode } from "react";
 import { TbArrowRight } from "react-icons/tb";
 interface CardProps {
@@ -18,10 +19,10 @@ const Card = ({ title, description, icon }: CardProps) => {
           <p className="text-gray-500 text-center">{description}</p>
         )}
       </div>
-      <button className="bg-primary text-white px-8 mt-2 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75">
+      <Link href="/hizmetlerimiz" className="bg-primary text-white px-8 mt-2 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75">
         Daha Fazla
         <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-      </button>
+      </Link>
     </div>
   );
 };

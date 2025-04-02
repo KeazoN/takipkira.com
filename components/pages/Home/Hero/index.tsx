@@ -2,6 +2,7 @@ import RotatingText from "@/components/animations/RotatingText";
 import AppStore from "@/components/AppStore";
 import PlayStore from "@/components/PlayStore";
 import Image from "next/image";
+import Link from "next/link";
 import { TbArrowRight } from "react-icons/tb";
 
 const Hero = () => {
@@ -38,14 +39,14 @@ const Hero = () => {
             kira takipini kolaylaştırın.
           </p>
           <div className="flex items-center justify-center gap-4 max-sm:flex-col max-sm:w-full">
-            <button className="bg-primary text-white px-8 py-2 group rounded-full font-medium flex items-center justify-center gap-2 transition border border-primary hover:brightness-75 max-sm:w-full">
+            <Link href="/iletisim" className="bg-primary text-white px-8 py-2 group rounded-full font-medium flex items-center justify-center gap-2 transition border border-primary hover:brightness-75 max-sm:w-full">
               Hemen Başla{" "}
               <TbArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </button>
-            <button className="bg-white text-primary px-8 py-2 group rounded-full font-medium border-gray-100 flex items-center justify-center gap-2 transition border hover:border-gray-400 max-sm:w-full">
+            </Link>
+            <Link href="/hizmetlerimiz" className="bg-white text-primary px-8 py-2 group rounded-full font-medium border-gray-100 flex items-center justify-center gap-2 transition border hover:border-gray-400 max-sm:w-full">
               Daha Fazla{" "}
               <TbArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </button>
+            </Link>
           </div>
           <div className="grid grid-cols-3 gap-4 absolute bottom-24 max-lg:relative max-lg:bottom-0 max-lg:grid-cols-2">
             <PlayStore />

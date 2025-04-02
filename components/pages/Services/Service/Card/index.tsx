@@ -20,10 +20,6 @@ const Card = ({ title, description, icon }: CardProps) => {
           {description}
         </p>
       </div>
-      <button className="bg-primary text-white px-4 sm:px-6 md:px-8 mt-1 sm:mt-2 shadow-lg py-1.5 sm:py-2 rounded-3xl group flex items-center gap-1.5 sm:gap-2 transition-all duration-300 hover:brightness-75 text-sm sm:text-base w-full sm:w-auto justify-center">
-        Daha Fazla
-        <TbArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-      </button>
     </div>
   );
 };

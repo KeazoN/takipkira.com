@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { TbArrowRight } from "react-icons/tb";
 import Card from "./Card";
+import Link from "next/link";
 
 const WhoAreWe = () => {
   return (
@@ -50,14 +51,20 @@ const WhoAreWe = () => {
               />
             </div>
             <div className="flex items-center gap-4 flex-col sm:flex-row w-full sm:w-auto">
-              <button className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto justify-center">
+              <Link
+                href="/iletisim"
+                className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto justify-center"
+              >
                 Hemen Başla
                 <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-              </button>
-              <button className="bg-transparent text-primary border border-primary px-8 py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto justify-center">
+              </Link>
+              <Link
+                href="/neden-biz"
+                className="bg-transparent text-primary border border-primary px-8 py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto justify-center"
+              >
                 Daha Fazla
                 <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
-              </button>
+              </Link>
             </div>
           </div>
 

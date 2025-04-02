@@ -1,6 +1,7 @@
 import { TbArrowRight } from "react-icons/tb";
 import Card from "../../Blog/Card";
 import blogData from "@/models/blogs.json";
+import Link from "next/link";
 
 const Blog = () => {
   return (
@@ -18,10 +19,10 @@ const Blog = () => {
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <button className="bg-primary text-white px-6 sm:px-8 py-2.5 rounded-full group flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02] text-sm sm:text-base">
+            <Link href="/blog" className="bg-primary text-white px-6 sm:px-8 py-2.5 rounded-full group flex items-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:scale-[1.02] text-sm sm:text-base">
               Tüm Bloglar
               <TbArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 w-full gap-4 sm:gap-6">

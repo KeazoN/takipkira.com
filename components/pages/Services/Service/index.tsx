@@ -10,6 +10,7 @@ import {
   TbSitemap,
 } from "react-icons/tb";
 import Card from "./Card";
+import Link from "next/link";
 
 const Service = () => {
   return (
@@ -27,10 +28,13 @@ const Service = () => {
             </p>
           </div>
           <div className="flex items-center justify-center w-full sm:w-auto">
-            <button className="bg-primary text-white px-6 sm:px-8 shadow-lg py-2.5 sm:py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto text-sm sm:text-base justify-center">
+            <Link
+              href="/iletisim"
+              className="bg-primary text-white px-6 sm:px-8 shadow-lg py-2.5 sm:py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto text-sm sm:text-base justify-center"
+            >
               Hemen Başla
               <TbArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 w-full gap-3 xs:gap-4">

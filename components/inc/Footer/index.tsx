@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/Button";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -50,31 +51,27 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               <Link
-                href="/"
+                href="https://www.facebook.com/people/Takip-Kira/100089096078457/"
+                target="_blank"
                 className="p-2 rounded-full bg-white text-sky-500 hover:bg-sky-500 hover:text-white transition-all duration-300"
               >
                 <TbBrandFacebook className="w-5 h-5" />
               </Link>
               <Link
-                href="/"
+                href="https://www.instagram.com/takipkira/"
+                target="_blank"
                 className="p-2 rounded-full bg-white text-sky-500 hover:bg-sky-500 hover:text-white transition-all duration-300"
               >
                 <TbBrandInstagram className="w-5 h-5" />
               </Link>
               <Link
-                href="/"
-                className="p-2 rounded-full bg-white text-sky-500 hover:bg-sky-500 hover:text-white transition-all duration-300"
-              >
-                <TbBrandX className="w-5 h-5" />
-              </Link>
-              <Link
-                href="/"
+                href="https://www.linkedin.com/company/takip-kira/posts/?feedView=all"
                 className="p-2 rounded-full bg-white text-sky-500 hover:bg-sky-500 hover:text-white transition-all duration-300"
               >
                 <TbBrandLinkedin className="w-5 h-5" />
               </Link>
               <Link
-                href="/"
+                href="https://www.youtube.com/watch?v=alX2U9PMDt4&ab_channel=takipkira"
                 className="p-2 rounded-full bg-white text-sky-500 hover:bg-sky-500 hover:text-white transition-all duration-300"
               >
                 <TbBrandYoutube className="w-5 h-5" />
@@ -134,6 +131,14 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/iletisim"
+                  className="text-gray-600 hover:text-primary transition-colors block py-2"
+                >
+                  İletişim
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -162,12 +167,12 @@ const Footer = () => {
                 <p>Erciyes Teknopark, Kayseri</p>
               </li>
               <li className="text-gray-600 py-2">
-                <span className="font-medium block">Email:</span>
-                <p>info@takipkira.com</p>
+                <span className="font-medium block">E-Posta Adresi:</span>
+                <p>bilgi@takipkira.com</p>
               </li>
               <li className="text-gray-600 py-2">
-                <span className="font-medium block">Telefon:</span>
-                <p>+90 555 123 4567</p>
+                <span className="font-medium block">Telefon Numarası:</span>
+                <p>+90 530 000 00 00</p>
               </li>
             </ul>
           </div>
@@ -199,11 +204,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Email adresiniz"
-                  className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
-                <button className="w-full bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">
-                  Abone Ol
-                </button>
+                <Button>Abone Ol</Button>
               </div>
             </div>
           </div>
