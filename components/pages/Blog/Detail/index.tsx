@@ -9,15 +9,42 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 const BlogDetail = ({ post }: { post: IBlogPost }) => {
   const getMDXContent = () => {
     try {
-      if (post.content.startsWith("content/")) {
-        const filePath = path.join(process.cwd(), post.content);
+      if (
+        post.content.startsWith("/content/") ||
+        post.content.startsWith("content/")
+      ) {
+        const contentPath = post.content.startsWith("/")
+          ? post.content.substring(1)
+          : post.content;
+
+        const filePath = path.join(process.cwd(), "public", contentPath);
+
+        console.log("Trying to load file:", filePath);
+
+        if (!fs.existsSync(filePath)) {
+          console.error("File does not exist:", filePath);
+
+          const altPath = path.join(process.cwd(), contentPath);
+          console.log("Trying alternative path:", altPath);
+
+          if (!fs.existsSync(altPath)) {
+            console.error("Alternative path also does not exist");
+            return <div>Content not found: File does not exist</div>;
+          }
+
+          const content = fs.readFileSync(altPath, "utf8");
+          return <MDXRemote source={content} />;
+        }
+
         const content = fs.readFileSync(filePath, "utf8");
         return <MDXRemote source={content} />;
       }
       return <div>{post.content}</div>;
     } catch (error) {
       console.error("Error reading MDX file:", error);
-      return <div>Content not found</div>;
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      return <div>Content not found: {errorMessage}</div>;
     }
   };
 
