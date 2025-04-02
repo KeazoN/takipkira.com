@@ -1,13 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Categories from "../Categories";
 import FeaturedPosts from "../FeaturedPosts";
 import { IBlogPost } from "@/interface/IBlogPost";
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 const BlogDetail = ({ post }: { post: IBlogPost }) => {
-  const getMDXContent = () => {
+  const getMDXContent = async () => {
     try {
       if (
         post.content.startsWith("/content/") ||
@@ -21,22 +23,22 @@ const BlogDetail = ({ post }: { post: IBlogPost }) => {
 
         console.log("Trying to load file:", filePath);
 
-        if (!fs.existsSync(filePath)) {
+        if (!(await fs.stat(filePath).catch(() => false))) {
           console.error("File does not exist:", filePath);
 
           const altPath = path.join(process.cwd(), contentPath);
           console.log("Trying alternative path:", altPath);
 
-          if (!fs.existsSync(altPath)) {
+          if (!(await fs.stat(altPath).catch(() => false))) {
             console.error("Alternative path also does not exist");
             return <div>Content not found: File does not exist</div>;
           }
 
-          const content = fs.readFileSync(altPath, "utf8");
+          const content = await fs.readFile(altPath, "utf8");
           return <MDXRemote source={content} />;
         }
 
-        const content = fs.readFileSync(filePath, "utf8");
+        const content = await fs.readFile(filePath, "utf8");
         return <MDXRemote source={content} />;
       }
       return <div>{post.content}</div>;
@@ -51,7 +53,7 @@ const BlogDetail = ({ post }: { post: IBlogPost }) => {
   return (
     <div className="container max-w-[1255px] mx-auto px-4 sm:px-6 lg:px-8 py-12 mt-24">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <article className="lg:col-span-2">
+        <article className="lg:col-span-2 flex flex-col gap-8">
           <div className="max-w-3xl">
             <div className="mb-12">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
