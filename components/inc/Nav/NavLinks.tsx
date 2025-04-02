@@ -26,28 +26,28 @@ const navLinks: NavLink[] = [
     title: "Hizmetlerimiz",
     href: "/hizmetlerimiz",
   },
-  // {
-  //   title: "İşlemler",
-  //   href: "/islemler",
-  //   dropdown: [
-  //     {
-  //       title: "Kira Artışı Hesapla",
-  //       href: "/islemler/kira-artis-orani",
-  //     },
-  //     {
-  //       title: "Kira Sözleşmesi Oluştur",
-  //       href: "/islemler/kira-sozlesmesi-olustur",
-  //     },
-  //     {
-  //       title: "Tahliye Tahaatütnamesi Oluştur",
-  //       href: "/islemler/tahliye-tahaatutnamesi-olustur",
-  //     },
-  //     {
-  //       title: "Kira Gelir Beyanı Oluştur",
-  //       href: "/islemler/kira-gelir-beyani-olustur",
-  //     },
-  //   ],
-  // },
+  {
+    title: "İşlemler",
+    href: "/islemler",
+    dropdown: [
+      {
+        title: "Kira Artışı Hesapla",
+        href: "/islemler/kira-artis-orani",
+      },
+      // {
+      //   title: "Kira Sözleşmesi Oluştur",
+      //   href: "/islemler/kira-sozlesmesi-olustur",
+      // },
+      // {
+      //   title: "Tahliye Tahaatütnamesi Oluştur",
+      //   href: "/islemler/tahliye-tahaatutnamesi-olustur",
+      // },
+      // {
+      //   title: "Kira Gelir Beyanı Oluştur",
+      //   href: "/islemler/kira-gelir-beyani-olustur",
+      // },
+    ],
+  },
   {
     title: "Neden Biz?",
     href: "/neden-biz",

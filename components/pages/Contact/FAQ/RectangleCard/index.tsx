@@ -15,16 +15,16 @@ const RectangleCard = ({
 
   return (
     <div
-      className="p-6 border border-gray-200 rounded-3xl flex flex-col gap-4 cursor-pointer"
+      className="p-4 md:p-6 border border-gray-200 rounded-2xl md:rounded-3xl flex flex-col gap-3 md:gap-4 cursor-pointer hover:border-primary/20 hover:shadow-md transition"
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold">{title}</h3>
+        <h3 className="text-base md:text-lg font-bold">{title}</h3>
         <motion.span
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.1 }}
         >
-          <TbChevronDown className="w-5 h-5" />
+          <TbChevronDown className="w-4 h-4 md:w-5 md:h-5" />
         </motion.span>
       </div>
       <AnimatePresence>
@@ -34,7 +34,7 @@ const RectangleCard = ({
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.1 }}
-            className="text-gray-600 leading-relaxed overflow-hidden"
+            className="text-sm md:text-base text-gray-600 leading-relaxed overflow-hidden"
           >
             {description}
           </motion.p>

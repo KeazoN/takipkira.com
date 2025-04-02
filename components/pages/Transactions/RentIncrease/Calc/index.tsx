@@ -19,7 +19,7 @@ import { useState } from "react";
 const schema = z.object({
   rentPrice: z.string().min(1, "Kira alanı zorunludur"),
   rentIncreaseMonth: z.string().min(1, "Kira artış ayı zorunludur"),
-  rentIncreaseYear: z.string().min(1, "Kira artış yılı zorunludur"),
+  rentIncreaseYear: z.coerce.number().min(2024, "Geçerli bir yıl seçiniz"),
   rentIncreaseType: z.string().min(1, "Kira artış tercihi zorunludur"),
   customRate: z.string().optional(),
 });
@@ -32,6 +32,8 @@ const Calc = () => {
     increase: 0,
     rate: 0,
   });
+
+  const [activeTab, setActiveTab] = useState<"konut" | "isyeri">("konut");
 
   const {
     register,
@@ -59,7 +61,7 @@ const Calc = () => {
           throw new Error("Geçerli bir artış oranı giriniz");
         }
       } else {
-        rate = 25; // TÜFE oranı için API'den alınacak
+        rate = activeTab === "konut" ? 53.83 : 53.83; // TÜFE oranı için API'den alınacak
       }
 
       const increase = currentRent * (rate / 100);
@@ -84,33 +86,49 @@ const Calc = () => {
   const years = Array.from({ length: 11 }, (_, i) => currentYear + i);
 
   return (
-    <section className="container mt-4 max-w-[1255px] flex flex-col gap-4">
-      <ul className="flex items-center justify-center gap-2">
-        <li className="px-6 py-2 rounded-full cursor-pointer transition bg-primary text-white font-medium flex items-center gap-2">
+    <section className="container mt-4 max-w-[1255px] flex flex-col gap-4 px-4 md:px-6 lg:px-8">
+      <ul className="flex items-center justify-center gap-2 flex-wrap">
+        <li
+          onClick={() => setActiveTab("konut")}
+          className={`px-6 py-2 rounded-full cursor-pointer transition font-medium flex items-center gap-2 ${
+            activeTab === "konut"
+              ? "bg-primary text-white"
+              : "border border-gray-200 hover:bg-gray-100"
+          }`}
+        >
           <TbHome className="w-5 h-5" /> Konut
         </li>
-        <li className="px-6 py-2 rounded-full cursor-pointer border border-gray-200 transition hover:bg-gray-100 font-medium flex items-center gap-2">
+        <li
+          onClick={() => setActiveTab("isyeri")}
+          className={`px-6 py-2 rounded-full cursor-pointer transition font-medium flex items-center gap-2 ${
+            activeTab === "isyeri"
+              ? "bg-primary text-white"
+              : "border border-gray-200 hover:bg-gray-100"
+          }`}
+        >
           <TbBuildingStore className="w-5 h-5" /> İş Yeri
         </li>
       </ul>
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="col-span-3 p-6 flex flex-col gap-4 rounded-3xl border border-gray-200"
+          className="lg:col-span-3 p-4 md:p-6 flex flex-col gap-4 rounded-3xl border border-gray-200"
         >
           <div className="mb-4">
-            <h2 className="text-2xl font-bold">Kira Artış Hesaplama</h2>
-            <p className="text-gray-600 mt-1">
+            <h2 className="text-xl md:text-2xl font-bold">
+              Kira Artış Hesaplama
+            </h2>
+            <p className="text-gray-600 mt-1 text-sm md:text-base">
               Kira artış oranınızı hesaplamak için aşağıdaki formu doldurun.
             </p>
             <div className="flex items-center gap-2 p-2 rounded-lg mt-2 bg-sky-50 text-sky-700 border border-sky-100">
-              <TbInfoCircle className="w-3 h-3 text-primary" />
-              <p className="text-xs">
+              <TbInfoCircle className="w-3 h-3 text-primary flex-shrink-0" />
+              <p className="text-xs md:text-sm">
                 Mart 2025 kira artışı için açıklanan yüzde %53,83 olmuştur.
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
               <Input
                 type="text"
@@ -150,7 +168,7 @@ const Calc = () => {
               label="Kira Artış Yılı"
               options={years.map((year) => ({
                 label: year.toString(),
-                value: year.toString(),
+                value: year,
               }))}
               placeholder="Kira Artış Yılı"
               register={register}
@@ -193,42 +211,46 @@ const Calc = () => {
             Hesapla
           </Button>
         </form>
-        <div className="col-span-2 p-6 flex flex-col gap-4 rounded-3xl border border-gray-200">
+        <div className="lg:col-span-2 p-4 md:p-6 flex flex-col gap-4 rounded-3xl border border-gray-200">
           <div className="mb-4">
-            <h2 className="text-2xl font-bold">Kira Artış Sonucu</h2>
-            <p className="text-gray-600 mt-1">
+            <h2 className="text-xl md:text-2xl font-bold">Kira Artış Sonucu</h2>
+            <p className="text-gray-600 mt-1 text-sm md:text-base">
               Kira artış sonucunuzu buradan görebilirsiniz.
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-4 h-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
               <div className="bg-white p-4 rounded-2xl h-full shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-lg font-semibold mb-3 text-gray-700">
+                <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-700">
                   Yeni Kira Tutarı
                 </h3>
                 <div className="flex items-center gap-2 bg-primary/5 px-4 py-3 rounded-xl">
-                  <span className="text-2xl font-bold text-primary">
-                    <CountUp to={25000} separator="." duration={1} />
+                  <span className="text-xl md:text-2xl font-bold text-primary">
+                    <CountUp
+                      to={calculatedRent.newRent}
+                      separator="."
+                      duration={0.1}
+                    />
                   </span>
-                  <span className="text-xl font-semibold text-primary/80">
+                  <span className="text-lg md:text-xl font-semibold text-primary/80">
                     ₺
                   </span>
                 </div>
               </div>
 
               <div className="bg-white p-4 rounded-2xl h-full shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
-                <h3 className="text-lg font-semibold mb-3 text-gray-700">
+                <h3 className="text-base md:text-lg font-semibold mb-3 text-gray-700">
                   Artış Miktarı
                 </h3>
                 <div className="flex items-center gap-2 bg-primary/5 px-4 py-3 rounded-xl">
-                  <span className="text-2xl font-bold text-primary">
+                  <span className="text-xl md:text-2xl font-bold text-primary">
                     <CountUp
                       to={calculatedRent.increase}
                       separator="."
-                      duration={1}
+                      duration={0.1}
                     />
                   </span>
-                  <span className="text-xl font-semibold text-primary/80">
+                  <span className="text-lg md:text-xl font-semibold text-primary/80">
                     ₺
                   </span>
                 </div>
@@ -237,14 +259,14 @@ const Calc = () => {
 
             <div className="bg-white p-4 rounded-2xl h-full shadow-sm border border-gray-200 hover:border-primary/20 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold text-gray-700">
+                <h3 className="text-base md:text-lg font-semibold text-gray-700">
                   Artış Oranı
                 </h3>
                 <div className="flex items-center gap-2 bg-primary/5 px-4 py-3 rounded-xl">
-                  <span className="text-2xl font-bold text-primary">
-                    <CountUp to={calculatedRent.rate} duration={1} />
+                  <span className="text-xl md:text-2xl font-bold text-primary">
+                    <CountUp to={calculatedRent.rate} duration={0.1} />
                   </span>
-                  <span className="text-xl font-semibold text-primary/80">
+                  <span className="text-lg md:text-xl font-semibold text-primary/80">
                     %
                   </span>
                 </div>
