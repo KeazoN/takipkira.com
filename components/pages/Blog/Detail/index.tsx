@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Categories from "../Categories";
 import FeaturedPosts from "../FeaturedPosts";
