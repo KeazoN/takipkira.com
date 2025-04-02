@@ -7,7 +7,7 @@ const Card = ({ post, home }: { post: IBlogPost; home: boolean }) => {
   return (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
       <div
-        className={`h-60 bg-gray-200 flex items-center justify-center ${
+        className={`bg-gray-200 flex items-center justify-center ${
           home ? "h-44" : "h-60"
         }`}
       >
