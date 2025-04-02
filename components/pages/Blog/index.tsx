@@ -1,6 +1,7 @@
 import Card from "./Card";
 import FeaturedPosts from "./FeaturedPosts";
 import Categories from "./Categories";
+import blogs from "@/models/blogs.json";
 
 const Blog = () => {
   return (
@@ -10,20 +11,8 @@ const Blog = () => {
           <h1 className="text-3xl font-bold mb-8">Blog Yazıları</h1>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((_, index) => (
-              <Card
-                key={index}
-                post={{
-                  id: index,
-                  title: "Sample Post",
-                  slug: "sample-post",
-                  excerpt: "This is a sample post",
-                  //@ts-ignore
-                  image: "/placeholder.jpg",
-                  date: new Date().toISOString(),
-                  category: "General",
-                }}
-              />
+            {blogs.map((post) => (
+              <Card key={post.id} post={post} home={false} />
             ))}
           </div>
         </div>

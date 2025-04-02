@@ -1,26 +1,18 @@
+import blogs from "@/models/blogs.json";
+
 const Categories = () => {
-  const categories = [
-    {
-      name: "Emlak",
-      count: 12,
+  const categoryCount = blogs.reduce(
+    (acc: { [key: string]: number }, blog: any) => {
+      acc[blog.category] = (acc[blog.category] || 0) + 1;
+      return acc;
     },
-    {
-      name: "Kira Yönetimi",
-      count: 8,
-    },
-    {
-      name: "Teknoloji",
-      count: 5,
-    },
-    {
-      name: "Yatırım",
-      count: 15,
-    },
-    {
-      name: "Hukuk",
-      count: 7,
-    },
-  ];
+    {}
+  );
+
+  const categories = Object.entries(categoryCount).map(([name, count]) => ({
+    name,
+    count,
+  }));
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6">

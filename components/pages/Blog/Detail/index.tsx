@@ -62,7 +62,7 @@ const BlogDetail = ({ post }: { post: IBlogPost }) => {
               />
             </div>
 
-            <div className="prose prose-lg max-w-none prose-sky prose-headings:font-bold prose-a:text-sky-600 hover:prose-a:text-sky-500">
+            <div className="prose prose-lg w-full prose-sky prose-headings:font-bold prose-a:text-sky-600 hover:prose-a:text-sky-500">
               {getMDXContent()}
             </div>
 
