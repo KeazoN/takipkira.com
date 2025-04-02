@@ -11,4 +11,6 @@ export const defaultCountry: ICountry = {
 export const countries: ICountry[] = [
   { code: "tr", lang: "tr", name: "Türkçe" },
   { code: "us", lang: "en", name: "English" },
+  { code: "ru", lang: "ru", name: "Русский" },
+  { code: "sa", lang: "ar", name: "العربية" },
 ];

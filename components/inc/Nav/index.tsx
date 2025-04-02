@@ -34,7 +34,6 @@ const Nav = () => {
     }
   }, [isMobileMenuOpen]);
 
-  // Close mobile menu when pathname changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);

@@ -21,10 +21,10 @@ const NavLogo = () => {
           alt="Takip Kira"
           width={50}
           height={100}
-          className="w-28 h-fit flex-shrink-0"
+          className="w-28 h-fit flex-shrink-0 max-sm:w-24"
         />
       </Link>
-      <div className="scale-90">
+      <div className="scale-90 max-sm:scale-75">
         <CountrySelect lang={lang} bottom={true} />
       </div>
     </div>
