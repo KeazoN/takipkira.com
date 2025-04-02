@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/components/inc/Nav";
 import Footer from "@/components/inc/Footer";
 import WhatsappButton from "@/components/WhatsappButton";
+import { Toaster } from "react-hot-toast";
 export const metadata: Metadata = {
   title: "Takip Kira",
   description: "Takip Kira",
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} antialiased text-[#010F34]`}>
         <Nav />
         {children}
+        <Toaster />
         <WhatsappButton />
         <Footer />
       </body>
