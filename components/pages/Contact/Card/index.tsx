@@ -48,7 +48,7 @@ const Card = ({
             alt="card"
             width={500}
             height={400}
-            className="h-48 relative top-[26px] left-0 max-sm:h-32 w-fit object-cover"
+            className="h-48 relative top-[26px] left-0 max-sm:h-40 max-sm:top-4 w-fit object-cover"
           />
         )}
       </div>
