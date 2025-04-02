@@ -11,7 +11,19 @@ const Blog = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[1, 2, 3, 4].map((_, index) => (
-              <Card key={index} />
+              <Card
+                key={index}
+                post={{
+                  id: index,
+                  title: "Sample Post",
+                  slug: "sample-post",
+                  excerpt: "This is a sample post",
+                  //@ts-ignore
+                  image: "/placeholder.jpg",
+                  date: new Date().toISOString(),
+                  category: "General",
+                }}
+              />
             ))}
           </div>
         </div>
