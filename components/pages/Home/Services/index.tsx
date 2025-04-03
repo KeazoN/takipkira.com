@@ -22,12 +22,15 @@ const Services = () => {
               Takip Kira'nın <span className="text-primary">Hizmetleri</span>
             </h2>
             <p className="text-gray-500 text-sm sm:text-base">
-              Takip Kira, mülk sahiplerinin mülklerini takip etmek harici birçok
-              hizmet sunuyor.
+              Takip Kira olarak mülklerinizin tüm yönetim süreçlerini sizin için
+              üstleniyoruz.
             </p>
           </div>
           <div className="flex items-center justify-center">
-            <Link href="/hizmetlerimiz" className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto">
+            <Link
+              href="/hizmetlerimiz"
+              className="bg-primary text-white px-8 shadow-lg py-2 rounded-3xl group flex items-center gap-2 transition hover:brightness-75 w-full sm:w-auto"
+            >
               Tüm Hizmetler
               <TbArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
             </Link>

@@ -7,19 +7,16 @@ const Reference = () => {
   const references = [
     { src: "/assets/img/ref/albaraka.png", alt: "albaraka" },
     { src: "/assets/img/ref/kuveyt.svg", alt: "kuveyt" },
-    { src: "/assets/img/ref/kuveytTurkApi.svg", alt: "kuveytturkapi" },
     { src: "/assets/img/ref/turktelekom.png", alt: "turktelekom" },
     { src: "/assets/img/ref/puzzleLogo.svg", alt: "puzzle" },
     { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
     { src: "/assets/img/ref/albaraka.png", alt: "albaraka" },
     { src: "/assets/img/ref/kuveyt.svg", alt: "kuveyt" },
-    { src: "/assets/img/ref/kuveytTurkApi.svg", alt: "kuveytturkapi" },
     { src: "/assets/img/ref/turktelekom.png", alt: "turktelekom" },
     { src: "/assets/img/ref/puzzleLogo.svg", alt: "puzzle" },
     { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
     { src: "/assets/img/ref/albaraka.png", alt: "albaraka" },
     { src: "/assets/img/ref/kuveyt.svg", alt: "kuveyt" },
-    { src: "/assets/img/ref/kuveytTurkApi.svg", alt: "kuveytturkapi" },
     { src: "/assets/img/ref/turktelekom.png", alt: "turktelekom" },
     { src: "/assets/img/ref/puzzleLogo.svg", alt: "puzzle" },
     { src: "/assets/img/ref/erciyesTeknopark.svg", alt: "erciyesTeknopark" },
@@ -34,8 +31,9 @@ const Reference = () => {
               <span className="text-primary">Gücünüze Güç Katıyoruz!</span>
             </h2>
             <p className="text-gray-500 text-sm sm:text-base max-w-2xl">
-              İşletmelerinizin güvenliğini sağlamak için güvenilir bir partner
-              arıyorsanız, bizimle iletişime geçin.
+              Bize güvenen markalarla birlikte, kira yönetimini daha kolay ve
+              verimli hale getiriyoruz. İş ortaklarımızla güçlü çözümler
+              üretiyor, sektöre değer katıyoruz.
             </p>
           </div>
         </div>

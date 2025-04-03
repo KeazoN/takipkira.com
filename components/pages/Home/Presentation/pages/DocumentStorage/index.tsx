@@ -22,12 +22,13 @@ const DocumentStorage = () => {
             Sözleşme & Evrak Depolama
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
-            Önemli Belgeleriniz <span className="text-primary">Güvende!</span>
+            Önemli Belgeleriniz{" "}
+            <span className="text-primary">Bizimle Güvende!</span>
           </h2>
           <p className="text-gray-500 text-sm sm:text-base">
-            Kira kontratları, tapular ve diğer önemli belgeleri dijital olarak
-            saklayın. İstediğiniz zaman tek tıkla erişin ve evraklarınızı
-            kaybetme riskini ortadan kaldırın.
+            Mülklerinize ait tüm belgeleri profesyonel ekibimizle yönetiyoruz.
+            Kira kontratları, tapular ve diğer önemli evrakları dijital ortamda
+            güvenle saklıyor, düzenliyor ve sizin erişiminize sunuyoruz.
           </p>
         </div>
       </section>

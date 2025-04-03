@@ -3,25 +3,27 @@ import {
   TbUsers,
   TbHeartHandshake,
   TbHeadset,
+  TbHome,
+  TbCash,
 } from "react-icons/tb";
 import SectionTitle from "../shared/SectionTitle";
 
 const achievements = [
   {
-    icon: TbUsers,
-    value: "10K+",
-    label: "Aktif Kullanıcı",
+    icon: TbHome,
+    value: "250+",
+    label: "Takip Edilen Mülk",
     color: "primary",
   },
   {
-    icon: TbBuildingSkyscraper,
-    value: "50K+",
-    label: "Yönetilen Mülk",
+    icon: TbCash,
+    value: "₺500K+",
+    label: "Yönetilen Kira",
     color: "secondary",
   },
   {
     icon: TbHeartHandshake,
-    value: "99%",
+    value: "95%",
     label: "Müşteri Memnuniyeti",
     color: "success",
   },
@@ -40,7 +42,7 @@ const AchievementsSection = () => {
         <SectionTitle
           title="Takip Kira'nın"
           highlight="Başarıları"
-          description="Takip Kira olarak başarılarımızı sizlerle paylaşmaktan gurur duyuyoruz."
+          description="Takip Kira olarak kısa sürede elde ettiğimiz başarıları sizlerle paylaşmaktan gurur duyuyoruz."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
@@ -50,14 +52,38 @@ const AchievementsSection = () => {
               className="bg-white p-8 rounded-xl shadow-sm text-center border border-gray-200"
             >
               <div
-                className={`w-16 h-16 bg-${achievement.color}/10 rounded-full flex items-center justify-center mx-auto mb-4`}
+                className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                  achievement.color === "primary"
+                    ? "bg-primary/10"
+                    : achievement.color === "secondary"
+                    ? "bg-secondary/10"
+                    : achievement.color === "success"
+                    ? "bg-success/10"
+                    : ""
+                }`}
               >
                 <achievement.icon
-                  className={`w-8 h-8 text-${achievement.color}`}
+                  className={`w-8 h-8 ${
+                    achievement.color === "primary"
+                      ? "text-primary"
+                      : achievement.color === "secondary"
+                      ? "text-secondary"
+                      : achievement.color === "success"
+                      ? "text-success"
+                      : ""
+                  }`}
                 />
               </div>
               <p
-                className={`text-4xl font-bold text-${achievement.color} mb-2`}
+                className={`text-4xl font-bold mb-2 ${
+                  achievement.color === "primary"
+                    ? "text-primary"
+                    : achievement.color === "secondary"
+                    ? "text-secondary"
+                    : achievement.color === "success"
+                    ? "text-success"
+                    : ""
+                }`}
               >
                 {achievement.value}
               </p>

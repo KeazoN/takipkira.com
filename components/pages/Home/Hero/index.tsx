@@ -38,8 +38,8 @@ const Hero = () => {
             />
           </h1>
           <p className="text-lg opacity-70 leading-relaxed max-lg:text-base">
-            Takip Kira, kira takip sistemidir. Kira takip sistemini kullanarak
-            kira takipini kolaylaştırın.
+            Otomatik hatırlatmalar, detaylı raporlar ve yönetim özellikleriyle,
+            gayrimenkul finansmanınızı yönetiyoruz.
           </p>
           <div className="flex items-center justify-center gap-4 max-sm:flex-col max-sm:w-full">
             <Link

@@ -4,21 +4,21 @@ import SectionTitle from "../shared/SectionTitle";
 const advantages = [
   {
     icon: TbBolt,
-    title: "Hızlı ve Güvenilir",
+    title: "Profesyonel Mülk Takibi",
     description:
-      "Modern altyapımız sayesinde işlemlerinizi hızlı ve güvenli bir şekilde gerçekleştirin.",
+      "Uzman ekibimiz tüm mülklerinizi sizin adınıza profesyonelce takip eder ve yönetir.",
   },
   {
     icon: TbLock,
-    title: "Güvenli Altyapı",
+    title: "Güvenli Veri Saklama",
     description:
-      "Verileriniz en üst düzey güvenlik önlemleriyle korunur ve yedeklenir.",
+      "Mülk ve kira bilgileriniz en üst düzey güvenlik önlemleriyle korunur ve yedeklenir.",
   },
   {
     icon: TbMessageDots,
     title: "7/24 Destek",
     description:
-      "Uzman destek ekibimiz her zaman yanınızda, sorularınıza anında çözüm bulun.",
+      "Mülk yönetimi konusunda uzman destek ekibimiz her zaman yanınızda, sorularınıza anında çözüm bulun.",
   },
 ];
 
@@ -29,7 +29,7 @@ const AdvantagesSection = () => {
         <SectionTitle
           title="Takip Kira'nın"
           highlight="Avantajları"
-          description="Takip Kira, mülk sahiplerine birçok avantaj ve kolaylık sağlıyor."
+          description="Takip Kira, mülklerinizi sizin adınıza profesyonelce takip eder ve yönetir."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

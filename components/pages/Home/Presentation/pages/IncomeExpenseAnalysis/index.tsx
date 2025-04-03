@@ -17,8 +17,10 @@ const IncomeExpenseAnalysis = () => {
             <span className="text-primary">Kontrol Edin!</span>
           </h2>
           <p className="text-gray-500 text-sm sm:text-base">
-            Kira gelirlerinizi ve harcamalarınızı detaylı grafiklerle inceleyin.
-            Gelir-gider dengenizi koruyarak, mülklerinizden maksimum verim alın.
+            Detaylı grafikler ve analizlerle finansal performansınızı takip
+            ediyoruz. Gelir-gider dengenizi optimize ederek karlılığınızı
+            artırıyoruz. Profesyonel ekibimizle mülklerinizin finansal
+            yönetimini üstleniyoruz.
           </p>
         </div>
         <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-2xl flex items-center text-sky-200 justify-center mt-4 lg:mt-0">

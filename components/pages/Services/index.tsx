@@ -26,6 +26,8 @@ const ServicesPageDetail = () => {
             backgroundColor="bg-secondary text-white"
             image="/assets/img/svg/mobile.webp"
             buttonColor="bg-primary"
+            href="https://panel.takipkira.com/musteri"
+            target="_blank"
           />
           <Card
             title="Müşteri Temsilcimiz!"
@@ -35,6 +37,7 @@ const ServicesPageDetail = () => {
             backgroundColor="bg-[#0b3636] text-white"
             image="/assets/img/svg/customerService.webp"
             buttonColor="bg-success"
+            href="tel:+905524114748"
           />
         </div>
       </div>

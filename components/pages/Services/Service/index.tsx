@@ -23,8 +23,8 @@ const Service = () => {
               <span className="text-primary block sm:inline">Hizmetleri</span>
             </h2>
             <p className="text-gray-500 text-sm sm:text-base max-w-[90%] mx-auto sm:mx-0">
-              Takip Kira, mülk sahiplerinin mülklerini takip etmek harici birçok
-              hizmet sunuyor.
+              Takip Kira olarak mülklerinizin tüm yönetim süreçlerini sizin için
+              üstleniyoruz.
             </p>
           </div>
           <div className="flex items-center justify-center w-full sm:w-auto">
@@ -41,42 +41,42 @@ const Service = () => {
           <Card
             icon={<TbHome2 className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Güvenli Kiralama"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Kiracı adaylarını titizlikle değerlendirip, mülkünüzü güvenilir ellere teslim ediyoruz"
           />
           <Card
             icon={<TbCash className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Kira & Tahsilat"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Kira ödemelerinin takibi ve tahsilatını sizin adınıza gerçekleştiriyoruz"
           />
           <Card
             icon={<TbHomeShield className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Mülkün Fiziki Durumu"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Düzenli kontroller ile mülkünüzün durumunu takip ediyor ve detaylı raporlar sunuyoruz"
           />
           <Card
             icon={<TbFileText className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Sözleşme Takibi"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Kira sözleşmelerinin hazırlanması ve yenilenmesi süreçlerini profesyonelce yönetiyoruz"
           />
           <Card
             icon={<TbShieldCheck className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Risk Koruması"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Mülkünüzü ve kira gelirlerinizi olası risklere karşı koruma altına alıyoruz"
           />
           <Card
             icon={<TbEyeDollar className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Ödeme Takip"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Kira ödemelerini anlık takip ediyor, gecikmeler için hemen aksiyon alıyoruz"
           />
           <Card
             icon={<TbBuildingBank className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Online Şube"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Mülkünüzle ilgili tüm gelişmeleri online platformumuzdan 7/24 takip edebilirsiniz"
           />
           <Card
             icon={<TbSitemap className="w-6 h-6 sm:w-8 sm:h-8" />}
             title="Daha Fazla Hizmet"
-            description="Mülklerinizin güvenli kiralanması için gerekli olan tüm bilgileri"
+            description="Mülk değerleme ve özel danışmanlık hizmetlerimizle yanınızdayız"
           />
         </div>
       </div>

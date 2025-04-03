@@ -6,36 +6,32 @@ const technologies = [
     icon: TbBrain,
     iconBgColor: "primary",
     iconColor: "primary",
-    title: "Yapay Zeka Analizi",
+    title: "Profesyonel Mülk Takibi",
     description:
-      "Gelişmiş yapay zeka algoritmalarımız ile piyasa trendlerini analiz eder, kira değerlemesi yapar ve geleceğe yönelik tahminler oluştururuz.",
+      "Uzman ekibimiz mülklerinizi ve kiralarınızı sizin adınıza takip eder, ödemelerinizi düzenler ve raporlarınızı oluşturur.",
     features: [
-      "Otomatik fiyat optimizasyonu",
-      "Piyasa trend analizi",
-      "Kişiselleştirilmiş öneriler",
+      "Profesyonel kira takibi",
+      "Zamanında ödeme takibi",
+      "Detaylı raporlama",
     ],
   },
   {
     icon: TbLock,
     iconBgColor: "secondary",
     iconColor: "secondary",
-    title: "Blockchain Güvenliği",
+    title: "Güvenli Veri Saklama",
     description:
-      "Blockchain teknolojisi ile verileriniz güvende. Akıllı kontratlar sayesinde tüm işlemleriniz şeffaf ve güvenli.",
-    features: [
-      "Akıllı kontratlar",
-      "Şifrelenmiş veriler",
-      "Dağıtık veri yapısı",
-    ],
+      "En son güvenlik teknolojileri ile mülk ve kira verileriniz güvende. Tüm işlemleriniz şeffaf ve güvenli bir şekilde saklanır.",
+    features: ["Şifreli veri depolama", "Yedekleme sistemi", "Güvenli erişim"],
   },
   {
     icon: TbBolt,
     iconBgColor: "success",
     iconColor: "success",
-    title: "Gerçek Zamanlı İşlemler",
+    title: "Hızlı Hizmet Merkezi",
     description:
-      "Modern altyapımız sayesinde tüm işlemlerinizi anlık olarak takip edin ve yönetin. Hızlı ve kesintisiz hizmet.",
-    features: ["Anlık bildirimler", "Otomatik raporlama", "Kesintisiz erişim"],
+      "Modern altyapımız ve uzman ekibimiz sayesinde tüm mülk ve kira işlemlerinizi sizin adınıza yönetiyoruz. Hızlı ve kesintisiz hizmet.",
+    features: ["Anlık bildirimler", "Düzenli raporlama", "7/24 destek"],
   },
 ];
 
@@ -46,7 +42,7 @@ const TechnologySection = () => {
         <SectionTitle
           title="Takip Kira'nın"
           highlight="Teknolojisi"
-          description="Geleceğin teknolojilerini bugünden kullanarak emlak sektörüne yön veriyoruz."
+          description="En son teknolojileri kullanarak mülk ve kira takibini sizin için yapıyoruz."
         />
 
         <div className="mt-12">

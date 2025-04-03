@@ -7,13 +7,14 @@ import ReferencesSection from "./ReferencesSection";
 import AchievementsSection from "./AchievementsSection";
 import SustainabilitySection from "./SustainabilitySection";
 import GoMobile from "../Home/GoMobile";
+
 const WhyUs = () => {
   return (
     <main className="w-full">
       <ContentHero
         title="Takip Kira ile Tanışın"
         title2="Neden Biz?"
-        description="Yenilikçi teknolojimiz ve uzman ekibimizle kira yönetimini kolaylaştırıyor, size değerli zamanınızı geri kazandırıyoruz."
+        description="Profesyonel ekibimiz ve gelişmiş teknolojimizle mülklerinizin takibini sizin için yapıyor, sizi kira yönetimi stresinden kurtarıyoruz."
       />
 
       <AdvantagesSection />
@@ -36,6 +37,8 @@ const WhyUs = () => {
             backgroundColor="bg-secondary text-white"
             image="/assets/img/svg/mobile.webp"
             buttonColor="bg-primary"
+            href="https://panel.takipkira.com/musteri"
+            target="_blank"
           />
           <Card
             title="Müşteri Temsilcimiz!"
@@ -45,6 +48,7 @@ const WhyUs = () => {
             backgroundColor="bg-[#0b3636] text-white"
             image="/assets/img/svg/customerService.webp"
             buttonColor="bg-success"
+            href="tel:+905524114748"
           />
         </div>
       </div>

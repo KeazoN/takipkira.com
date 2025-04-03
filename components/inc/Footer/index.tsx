@@ -14,16 +14,54 @@ import {
   TbChevronDown,
   TbChevronUp,
 } from "react-icons/tb";
+import { z } from "zod";
+import emailjs from "emailjs-com";
+import { toast } from "react-hot-toast";
+
+const newsletterSchema = z.object({
+  email: z.string().email("Geçerli bir email adresi giriniz"),
+});
 
 const Footer = () => {
   const pathname = usePathname();
   const [openMenus, setOpenMenus] = useState<{ [key: string]: boolean }>({});
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const toggleMenu = (menuName: string) => {
     setOpenMenus((prev) => ({
       ...prev,
       [menuName]: !prev[menuName],
     }));
+  };
+
+  const handleNewsletter = async () => {
+    try {
+      setLoading(true);
+      const validatedData = newsletterSchema.parse({ email });
+
+      const templateParams = {
+        phoneNumber: validatedData.email,
+      };
+
+      await emailjs.send(
+        process.env.EMAILJS_SERVICE_ID!,
+        process.env.EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.EMAILJS_PUBLIC_KEY!
+      );
+
+      toast.success("Bültene başarıyla abone oldunuz!");
+      setEmail("");
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        toast.error(error.errors[0].message);
+      } else {
+        toast.error("Bir hata oluştu. Lütfen tekrar deneyiniz.");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (pathname.includes("/uye-ol")) {
@@ -172,7 +210,7 @@ const Footer = () => {
               </li>
               <li className="text-gray-600 py-2">
                 <span className="font-medium block">Telefon Numarası:</span>
-                <p>+90 530 000 00 00</p>
+                <p>+90 552 411 47 48</p>
               </li>
             </ul>
           </div>
@@ -204,9 +242,13 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Email adresiniz"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
-                <Button>Abone Ol</Button>
+                <Button onClick={handleNewsletter} disabled={loading}>
+                  {loading ? "Gönderiliyor..." : "Abone Ol"}
+                </Button>
               </div>
             </div>
           </div>

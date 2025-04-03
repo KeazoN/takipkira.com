@@ -4,21 +4,21 @@ import SectionTitle from "../shared/SectionTitle";
 const references = [
   {
     quote:
-      "Takip Kira'nın kurumsal çözümleri sayesinde 500+ mülkün yönetimini yapıyoruz.",
+      "Takip Kira ile mülklerimin takibini artık düşünmüyorum. Her şeyi onlar hallediyor.",
     name: "Ali Yıldırım",
-    title: "Teknopark Yöneticisi, Teknopark Kayseri",
+    title: "Mülk Sahibi, Kayseri",
   },
   {
     quote:
-      "Takip Kira platformu ile kira yönetim maliyetlerimizi %40 oranında optimize ettik.",
+      "Kiracılarımla ilgili tüm işlemleri Takip Kira yönetiyor. Zamandan ve maliyetten tasarruf ediyorum.",
     name: "Zeynep Kaya",
-    title: "Finans Müdürü, XYZ Group",
+    title: "İşletme Sahibi, İstanbul",
   },
   {
     quote:
-      "Blockchain altyapısı ve anlık raporlama özellikleri ile sektörün en kapsamlı çözümü.",
+      "Profesyonel ekipleri sayesinde mülklerimin takibi çok kolay. Düzenli raporlar ve ödemeler için teşekkürler.",
     name: "Murat Demir",
-    title: "Teknoloji Direktörü, DEF Real Estate",
+    title: "Yatırımcı, Ankara",
   },
 ];
 
@@ -29,7 +29,7 @@ const ReferencesSection = () => {
         <SectionTitle
           title="Takip Kira'nın"
           highlight="Referansları"
-          description="Müşterilerimizin başarı hikayeleri ve deneyimleri."
+          description="Müşterilerimizin memnuniyet ve deneyimleri."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
