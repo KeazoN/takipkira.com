@@ -2,6 +2,7 @@
 
 import { TbPhoto } from "react-icons/tb";
 import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   {
@@ -18,7 +19,7 @@ const services = [
         <li>Tam şeffaflık ile faturalandırma</li>
       </ul>
     `,
-    image: "/images/services/maintenance-renovation.jpg",
+    image: "/assets/img/service/bakim_tadilat.png",
   },
   {
     id: 2,
@@ -34,7 +35,7 @@ const services = [
         <li>Hasar anında destek</li>
       </ul>
     `,
-    image: "/images/services/insurance.jpg",
+    image: "/assets/img/service/dask_and_sigorta.png",
   },
   {
     id: 3,
@@ -50,7 +51,7 @@ const services = [
         <li>Kira artış dönemlerinde doğru yönlendirme</li>
       </ul>
     `,
-    image: "/images/services/rent-valuation.jpg",
+    image: "/assets/img/service/guncel_kira_bedel.png",
   },
   {
     id: 4,
@@ -66,7 +67,7 @@ const services = [
         <li>Hak kayıplarını önleyici yapı</li>
       </ul>
     `,
-    image: "/images/services/secure-rent.jpg",
+    image: "/assets/img/service/guvenli_kiralama.png",
   },
   {
     id: 5,
@@ -82,7 +83,7 @@ const services = [
         <li>Gecikme bildirimi ve çözüm süreci</li>
       </ul>
     `,
-    image: "/images/services/rent-tracking.jpg",
+    image: "/assets/img/service/kira_takibi.png",
   },
   {
     id: 6,
@@ -98,7 +99,7 @@ const services = [
         <li>Tam şeffaflık ve veri güvenliği</li>
       </ul>
     `,
-    image: "/images/services/online-branch.jpg",
+    image: "/assets/img/service/online_sube.png",
   },
   {
     id: 7,
@@ -114,7 +115,7 @@ const services = [
         <li>Profesyonel yatırım danışmanlığı</li>
       </ul>
     `,
-    image: "/images/services/investment.jpg",
+    image: "/assets/img/service/firsat_yatirimlar.png",
   },
   {
     id: 8,
@@ -130,7 +131,7 @@ const services = [
         <li>Online Şube'den erişim</li>
       </ul>
     `,
-    image: "/images/services/property-status.jpg",
+    image: "/assets/img/service/mulkun_fiziki.png",
   },
   {
     id: 9,
@@ -146,7 +147,7 @@ const services = [
         <li>Mobil uygulama üzerinden takip</li>
       </ul>
     `,
-    image: "/images/services/payment-tracking.jpg",
+    image: "/assets/img/service/odeme_takip.png",
   },
   {
     id: 10,
@@ -162,7 +163,7 @@ const services = [
         <li>Tüm yasal süreç desteği</li>
       </ul>
     `,
-    image: "/images/services/sales.jpg",
+    image: "/assets/img/service/satis_hizmetleri.png",
   },
   {
     id: 11,
@@ -178,7 +179,7 @@ const services = [
         <li>Proaktif çözüm önerileri</li>
       </ul>
     `,
-    image: "/images/services/risk-protection.jpg",
+    image: "/assets/img/service/risk_korumasi.png",
   },
   {
     id: 12,
@@ -194,7 +195,7 @@ const services = [
         <li>Teminat iadelerinde raporlama</li>
       </ul>
     `,
-    image: "/images/services/deposit.jpg",
+    image: "/assets/img/service/teminat.png",
   },
 ];
 
@@ -235,16 +236,23 @@ const ScrollTrigger = () => {
               }}
             >
               <div className="lg:hidden mb-6">
-                <div className="w-full h-[250px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
-                  {service.image ? (
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <TbPhoto size={32} />
-                  )}
+                <div className="w-full h-[250px] rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    {service.image ? (
+                      <motion.img
+                        key={service.id}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.2 }}
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <TbPhoto size={32} />
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-3 flex items-center gap-2">
@@ -259,16 +267,23 @@ const ScrollTrigger = () => {
           ))}
         </div>
         <div className="hidden lg:block w-full lg:w-[40%] lg:sticky lg:h-full lg:top-24">
-          <div className="w-full h-[250px] md:h-[300px] lg:h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
-            {services[activeService]?.image ? (
-              <img
-                src={services[activeService]?.image}
-                alt={services[activeService]?.title}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <TbPhoto size={32} />
-            )}
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
+            <AnimatePresence mode="wait">
+              {services[activeService]?.image ? (
+                <motion.img
+                  key={services[activeService].id}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2 }}
+                  src={services[activeService].image}
+                  alt={services[activeService].title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <TbPhoto size={32} />
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
