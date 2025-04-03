@@ -2,242 +2,200 @@
 
 import { TbPhoto } from "react-icons/tb";
 import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   {
     id: 1,
-    title: "Kira Tahsilatı",
+    title: "Bakım & Tadilat Hizmetleri",
     description: `
-      <h3>Profesyonel Kira Tahsilat Yönetimi</h3>
+      <h3>Ekonomik ve Hızlı Bakım-Tadilat Çözümleri</h3>
       <p>
-        Kiracılarınızdan düzenli kira ödemelerinin tahsilatı ve takibini profesyonel bir şekilde yönetiyoruz. Zamanında tahsilat, gecikme bildirimleri ve detaylı ödeme raporlaması sunuyoruz.
+        Mülkünüzde ihtiyaç duyulan tüm bakım ve tadilat işlemleri, çözüm ortaklarımız aracılığıyla hızlı ve uygun maliyetlerle gerçekleştirilir. Her işlem öncesinde sizin onayınız alınır.
       </p>
       <ul>
-        <li>Otomatik ödeme hatırlatmaları ve bildirimler</li>
-        <li>Çoklu ödeme seçenekleri (EFT, havale, kredi kartı)</li>
-        <li>Aylık detaylı tahsilat raporları</li>
-        <li>Gecikme durumunda profesyonel takip süreci</li>
-        <li>Online ödeme takip platformu</li>
+        <li>Güncel fiyatlarla profesyonel hizmet</li>
+        <li>Mülk değerini koruyan uygulamalar</li>
+        <li>Tam şeffaflık ile faturalandırma</li>
       </ul>
-      <p>
-        *Tüm ödemeler yasal mevzuata uygun şekilde kayıt altına alınır ve raporlanır.
-      </p>
     `,
-    image: "/images/services/rent-collection.jpg",
+    image: "/assets/img/service/bakim_tadilat.png",
   },
   {
     id: 2,
-    title: "Bakım Yönetimi",
+    title: "Dask & Sigorta Hizmetleri",
     description: `
-      <h3>Profesyonel Bakım ve Onarım Yönetimi</h3>
+      <h3>DASK ve Sigorta Süreçlerinde Tam Takip</h3>
       <p>
-        Mülkünüzün değerini korumak ve yaşam kalitesini artırmak için kapsamlı bakım ve onarım hizmetleri sunuyoruz. Düzenli kontroller ve önleyici bakım programları ile mülkünüzün her zaman en iyi durumda kalmasını sağlıyoruz.
+        Mülkünüz için gerekli olan Zorunlu Deprem Sigortası (DASK) ve özel sigorta işlemleri zamanında yenilenir, takibi sistem üzerinden yapılır.
       </p>
       <ul>
-        <li>Periyodik bakım planlaması ve takibi</li>
-        <li>Önleyici bakım programları</li>
-        <li>Acil onarım müdahaleleri</li>
-        <li>Profesyonel tedarikçi ağı</li>
-        <li>Detaylı bakım raporları ve dokümantasyon</li>
+        <li>Poliçe yenileme hatırlatmaları</li>
+        <li>Risk analizi ve danışmanlık</li>
+        <li>Hasar anında destek</li>
       </ul>
-      <p>
-        *Tüm bakım ve onarım işlemleri uzman ekipler tarafından gerçekleştirilir ve garanti kapsamında yapılır.
-      </p>
     `,
-    image: "/images/services/maintenance.jpg",
+    image: "/assets/img/service/dask_and_sigorta.png",
   },
   {
     id: 3,
-    title: "Kiracı Değerlendirmesi",
+    title: "Güncel Kira Bedel Tespiti",
     description: `
-      <h3>Profesyonel Kiracı Değerlendirme ve Seçim Süreci</h3>
+      <h3>Kira Ekspertiz Raporu ile Değer Tespiti</h3>
       <p>
-        Mülkünüz için en uygun kiracıyı bulma sürecinde kapsamlı bir değerlendirme sistemi uyguluyoruz. Potansiyel kiracıların finansal durumu, kredi geçmişi ve referanslarını detaylı olarak inceleyerek risk değerlendirmesi yapıyoruz.
+        SPK lisanslı uzmanlar tarafından hazırlanan ekspertiz raporu ile mülkünüzün gerçek kira değeri bilimsel yöntemlerle belirlenir.
       </p>
       <ul>
-        <li>Detaylı kimlik ve adres doğrulaması</li>
-        <li>Kredi skoru ve finansal geçmiş analizi</li>
-        <li>İş ve gelir durumu teyidi</li>
-        <li>Önceki kira ödemelerinin kontrolü</li>
-        <li>Referans kontrolleri ve görüşmeler</li>
-        <li>Adli sicil kaydı sorgulaması</li>
+        <li>SPK lisanslı uzmanlardan analiz</li>
+        <li>Bölgeye ve mülke özel değerlendirme</li>
+        <li>Kira artış dönemlerinde doğru yönlendirme</li>
       </ul>
-      <p>
-        *Tüm değerlendirme süreci KVKK kapsamında yürütülür ve gizlilik esaslarına uygun şekilde gerçekleştirilir.
-      </p>
-      <p>
-        Kiracı değerlendirme sürecimiz, mülk sahiplerini olası risklerden korumak ve uzun vadeli, güvenilir kiralama ilişkileri kurmak için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/tenant-evaluation.jpg",
+    image: "/assets/img/service/guncel_kira_bedel.png",
   },
   {
     id: 4,
-    title: "Yasal Destek",
+    title: "Güvenli Kiralama",
     description: `
-      <h3>Profesyonel Hukuki Danışmanlık ve Yasal Süreç Yönetimi</h3>
+      <h3>Kişiye Özel, Hukuki Güvenceli Kiralama</h3>
       <p>
-        Kira sözleşmelerinin hazırlanmasından yasal süreçlerin takibine kadar tüm hukuki konularda uzman desteği sağlıyoruz. Deneyimli hukuk ekibimiz, mülk sahiplerinin haklarını korumak ve yasal süreçleri sorunsuz yönetmek için yanınızda.
+        Hazırlanan özel sözleşmeler ve doğru kiracı seçimiyle kiralama süreci sorunsuz ve güvenli hale getirilir.
       </p>
       <ul>
-        <li>Profesyonel kira sözleşmesi hazırlama</li>
-        <li>Yasal danışmanlık hizmetleri</li>
-        <li>Kiracı-mal sahibi anlaşmazlıklarında arabuluculuk</li>
-        <li>İcra ve tahliye süreçlerinin yönetimi</li>
-        <li>Yasal değişikliklerin takibi ve uyum sağlama</li>
-        <li>Vergi ve muhasebe danışmanlığı</li>
+        <li>Kişiye özel kira sözleşmesi</li>
+        <li>Kiracı profili analizi</li>
+        <li>Hak kayıplarını önleyici yapı</li>
       </ul>
-      <p>
-        *Tüm yasal süreçler deneyimli avukatlarımız tarafından takip edilir ve düzenli olarak raporlanır.
-      </p>
-      <p>
-        Yasal destek hizmetlerimiz, mülk sahiplerinin hukuki haklarını korumak ve olası riskleri minimize etmek için tasarlanmıştır. Güncel mevzuat değişikliklerini takip ederek, sözleşmelerinizin ve işlemlerinizin her zaman yasal çerçevede kalmasını sağlıyoruz.
-      </p>
     `,
-    image: "/images/services/legal-support.jpg",
+    image: "/assets/img/service/guvenli_kiralama.png",
   },
   {
     id: 5,
-    title: "Mülk Denetimi",
+    title: "Kira & Tahsilat Takibi",
     description: `
-      <h3>Profesyonel Mülk Denetimi ve Raporlama</h3>
+      <h3>Zamanında Tahsilat, Düzenli Takip</h3>
       <p>
-        Mülkünüzün sağlığını ve değerini sürekli olarak kontrol ediyoruz. Düzenli denetimler, güvenlik, enerji verimliliği ve yapısal durumunu kontrol ediyoruz.
+        Kiracınızla tüm görüşmeler yapılır, tahsilat süreci dijital olarak yönetilir. Gecikmeler anında bildirilir.
       </p>
       <ul>
-        <li>Güvenlik kontrolleri ve raporları</li>
-        <li>Enerji verimliliği değerlendirmeleri</li>
-        <li>Yapısal durum kontrolleri</li>
-        <li>Güvenlik önerileri ve yapısal güvenlik değerlendirmeleri</li>
-        <li>Detaylı denetim raporları</li>
+        <li>Otomatik tahsilat hatırlatmaları</li>
+        <li>Dijital ödeme takibi</li>
+        <li>Gecikme bildirimi ve çözüm süreci</li>
       </ul>
-      <p>
-        *Tüm denetimler ve raporlar detaylı bir şekilde kayıt altına alınır ve mülk sahiplerine sunulur.
-      </p>
-      <p>
-        Mülk denetimi hizmetlerimiz, mülk sahiplerinin mülklerinin sağlığını ve değerini sürekli olarak kontrol etmek için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/property-inspection.jpg",
+    image: "/assets/img/service/kira_takibi.png",
   },
   {
     id: 6,
-    title: "Acil Durum Yönetimi",
+    title: "Online Şube Hizmeti",
     description: `
-      <h3>Profesyonel Acil Durum Yönetimi ve Müdahale Hizmeti</h3>
+      <h3>7/24 Şeffaf ve Dijital Takip</h3>
       <p>
-        Mülkünüzün güvenliği ve sağlığı için acil durumlarda hızlı ve profesyonel yanıt veriyoruz.
+        Nerede olursanız olun, tüm kira, ödeme, evrak ve mülk süreçlerinizi Online Şube üzerinden kolayca takip edebilirsiniz.
       </p>
       <ul>
-        <li>Acil durumlarda hızlı müdahale</li>
-        <li>Acil durum raporlamaları ve kayıt altına alınması</li>
-        <li>Profesyonel ekiplerin hızlı yanıt vermesi</li>
-        <li>Acil durum planları ve yedek planları</li>
+        <li>Mobil ve web erişim</li>
+        <li>Anlık bildirimler ve raporlar</li>
+        <li>Tam şeffaflık ve veri güvenliği</li>
       </ul>
-      <p>
-        *Tüm acil durumlar profesyonel ekipler tarafından yönetilir ve mülk sahiplerine raporlanır.
-      </p>
-      <p>
-        Acil durum yönetimi hizmetlerimiz, mülk sahiplerinin mülklerinin güvenliği ve sağlığı için acil durumlarda hızlı ve profesyonel yanıt vermek için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/emergency.jpg",
+    image: "/assets/img/service/online_sube.png",
   },
   {
     id: 7,
-    title: "Finansal Raporlama",
+    title: "Fırsat Yatırımlar",
     description: `
-      <h3>Profesyonel Finansal Raporlama ve Takip Hizmeti</h3>
+      <h3>Yüksek Getirili Yatırım Fırsatları</h3>
       <p>
-        Mülkünüzün finansal durumunu detaylı olarak takip ediyor ve raporluyoruz.
+        Gayrimenkul piyasasındaki fırsat yatırımlar hakkında size özel analiz ve yönlendirme sunarız.
       </p>
       <ul>
-        <li>Detaylı gelir-gider takibi</li>
-        <li>Aylık ve yıllık finansal raporlar</li>
-        <li>Nakit akışı analizleri</li>
-        <li>Bütçe planlaması ve yönetimi</li>
-        <li>Vergi planlaması ve optimizasyonu</li>
+        <li>Yüksek kira getirili portföyler</li>
+        <li>Bölgesel gelişim analizleri</li>
+        <li>Profesyonel yatırım danışmanlığı</li>
       </ul>
-      <p>
-        *Tüm finansal raporlar detaylı bir şekilde hazırlanır ve mülk sahiplerine sunulur.
-      </p>
-      <p>
-        Finansal raporlama hizmetlerimiz, mülk sahiplerinin finansal durumlarını şeffaf ve detaylı bir şekilde takip etmeleri için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/financial-reporting.jpg",
+    image: "/assets/img/service/firsat_yatirimlar.png",
   },
   {
     id: 8,
-    title: "Pazarlama Hizmetleri",
+    title: "Mülkün Fiziki Durumu",
     description: `
-      <h3>Profesyonel Pazarlama ve Tanıtım Hizmeti</h3>
+      <h3>Görsel ve Teknik Durum Raporlaması</h3>
       <p>
-        Mülkünüzün değerini en iyi şekilde yansıtacak profesyonel pazarlama hizmetleri sunuyoruz.
+        Mülkünüzün güncel görselleri ve teknik durumu sisteminize yüklenerek size sürekli bilgi verilir.
       </p>
       <ul>
-        <li>Profesyonel fotoğraf ve video çekimleri</li>
-        <li>Dijital pazarlama stratejileri</li>
-        <li>Hedef kitle analizi ve konumlandırma</li>
-        <li>Sosyal medya yönetimi</li>
-        <li>İlan yönetimi ve optimizasyonu</li>
+        <li>Fotoğraflı durum tespiti</li>
+        <li>Periyodik fiziki kontroller</li>
+        <li>Online Şube'den erişim</li>
       </ul>
-      <p>
-        *Tüm pazarlama faaliyetleri profesyonel ekipler tarafından yürütülür.
-      </p>
-      <p>
-        Pazarlama hizmetlerimiz, mülkünüzün potansiyel kiracılara en etkili şekilde tanıtılması için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/marketing.jpg",
+    image: "/assets/img/service/mulkun_fiziki.png",
   },
   {
     id: 9,
-    title: "Sigorta Yönetimi",
+    title: "Ödeme Takip Hizmetleri",
     description: `
-      <h3>Kapsamlı Sigorta Yönetimi ve Takip Hizmeti</h3>
+      <h3>Fatura ve Kira Ödemelerinde Takip</h3>
       <p>
-        Mülkünüzün güvenliği için kapsamlı sigorta çözümleri sunuyoruz.
+        Fatura, vergi ve kira ödemeleri düzenli olarak sistem üzerinden takip edilir, size ve kiracınıza bildirim yapılır.
       </p>
       <ul>
-        <li>Özel sigorta paketleri</li>
-        <li>Düzenli poliçe takibi</li>
-        <li>Hasar yönetimi ve takibi</li>
-        <li>Risk değerlendirmesi</li>
-        <li>Sigorta yenileme hatırlatmaları</li>
+        <li>Fatura ve vergi ödeme hatırlatmaları</li>
+        <li>Online ödeme geçmişi</li>
+        <li>Mobil uygulama üzerinden takip</li>
       </ul>
-      <p>
-        *Tüm sigorta işlemleri uzman ekipler tarafından yönetilir.
-      </p>
-      <p>
-        Sigorta yönetimi hizmetlerimiz, mülkünüzün olası risklere karşı tam koruma altında olması için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/insurance.jpg",
+    image: "/assets/img/service/odeme_takip.png",
   },
   {
     id: 10,
-    title: "Online Yönetim",
+    title: "Satış Hizmetleri",
     description: `
-      <h3>7/24 Online Mülk Yönetim Platformu</h3>
+      <h3>Mülkünüzü Değerinde Satıyoruz</h3>
       <p>
-        Mülkünüzün tüm yönetim süreçlerini tek bir platformdan takip edebilirsiniz.
+        Satmak istediğiniz gayrimenkuller, geniş yatırımcı ağına ulaştırılır. Tüm süreç uzmanlar tarafından yönetilir.
       </p>
       <ul>
-        <li>Anlık bildirimler ve raporlamalar</li>
-        <li>Online ödeme takibi</li>
-        <li>Dijital doküman yönetimi</li>
-        <li>Mobil uygulama desteği</li>
-        <li>7/24 destek hizmeti</li>
+        <li>Değerinde ve hızlı satış</li>
+        <li>Yatırımcı portföyü ile doğrudan erişim</li>
+        <li>Tüm yasal süreç desteği</li>
       </ul>
-      <p>
-        *Platform sürekli olarak güncellenir ve geliştirilir.
-      </p>
-      <p>
-        Online yönetim platformumuz, mülk sahiplerinin tüm işlemlerini dijital ortamda kolayca yönetmeleri için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/online-management.jpg",
+    image: "/assets/img/service/satis_hizmetleri.png",
+  },
+  {
+    id: 11,
+    title: "Risk Koruması",
+    description: `
+      <h3>Risklere Karşı Tam Güvence</h3>
+      <p>
+        Mülkünüzü kira alamama, gecikme ve hasar gibi risklere karşı koruyacak çözümler sunarız.
+      </p>
+      <ul>
+        <li>Kira garanti sistemleri</li>
+        <li>Hasar ve ödeme riski analizi</li>
+        <li>Proaktif çözüm önerileri</li>
+      </ul>
+    `,
+    image: "/assets/img/service/risk_korumasi.png",
+  },
+  {
+    id: 12,
+    title: "Teminat",
+    description: `
+      <h3>Güvenceli Kiralama Süreci</h3>
+      <p>
+        Kiralama süreçlerinde teminat bedelleri ve güvence sistemleri ile mülk sahibinin çıkarları korunur.
+      </p>
+      <ul>
+        <li>Teminat bedeli takibi</li>
+        <li>Güvence sistemleri entegrasyonu</li>
+        <li>Teminat iadelerinde raporlama</li>
+      </ul>
+    `,
+    image: "/assets/img/service/teminat.png",
   },
 ];
 
@@ -278,16 +236,23 @@ const ScrollTrigger = () => {
               }}
             >
               <div className="lg:hidden mb-6">
-                <div className="w-full h-[250px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
-                  {service.image ? (
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <TbPhoto size={32} />
-                  )}
+                <div className="w-full h-[250px] rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
+                  <AnimatePresence mode="wait">
+                    {service.image ? (
+                      <motion.img
+                        key={service.id}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.2 }}
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <TbPhoto size={32} />
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold mb-3 flex items-center gap-2">
@@ -302,16 +267,23 @@ const ScrollTrigger = () => {
           ))}
         </div>
         <div className="hidden lg:block w-full lg:w-[40%] lg:sticky lg:h-full lg:top-24">
-          <div className="w-full h-[250px] md:h-[300px] lg:h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
-            {services[activeService]?.image ? (
-              <img
-                src={services[activeService]?.image}
-                alt={services[activeService]?.title}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <TbPhoto size={32} />
-            )}
+          <div className="w-full h-[250px] md:h-[300px] lg:h-[450px] rounded-2xl flex items-center text-sky-200 justify-center overflow-hidden">
+            <AnimatePresence mode="wait">
+              {services[activeService]?.image ? (
+                <motion.img
+                  key={services[activeService].id}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.2 }}
+                  src={services[activeService].image}
+                  alt={services[activeService].title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <TbPhoto size={32} />
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>

@@ -1,0 +1,36 @@
+{
+  "2025": {
+    "nisan": 53.83,
+    "mart": 53.83,
+    "subat": 67.07,
+    "ocak": 64.86
+  },
+  "2024": {
+    "aralik": 64.77,
+    "kasim": 62.79,
+    "ekim": 61.36,
+    "eylul": 61.53,
+    "agustos": 58.94,
+    "temmuz": 47.83,
+    "haziran": 38.21,
+    "mayis": 39.59,
+    "nisan": 43.68,
+    "mart": 68.5,
+    "subat": 67.07,
+    "ocak": 64.86
+  },
+  "2023": {
+    "aralik": 64.77,
+    "kasim": 62.79,
+    "ekim": 61.36,
+    "eylul": 61.53,
+    "agustos": 58.94,
+    "temmuz": 47.83,
+    "haziran": 38.21,
+    "mayis": 39.59,
+    "nisan": 43.68,
+    "mart": 55.19,
+    "subat": 55.18,
+    "ocak": 57.68
+  }
+}
