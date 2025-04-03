@@ -1,11 +1,18 @@
+import Image from "next/image";
 import { TbPhoto, TbTools } from "react-icons/tb";
 
 const MaintenanceManagement = () => {
   return (
     <div className="max-w-[1100px] mx-auto px-4">
       <section className="flex flex-col lg:!grid lg:grid-cols-2 items-center gap-8 lg:gap-20 w-full">
-        <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center">
-          <TbPhoto className="w-8 h-8 sm:w-10 sm:h-10" />
+        <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-2xl flex items-center text-sky-200 justify-center mt-4 lg:mt-0">
+          <Image
+            src="/assets/img/slayt/tadilat_bakim.png"
+            alt="Tadilat & Bakım Yönetimi"
+            width={1000}
+            height={1000}
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="flex flex-col gap-4 text-center lg:text-left">
           <span className="bg-sky-200 font-bold p-2 pr-4 text-xs sm:text-sm flex w-fit items-center justify-center gap-2 rounded-full mx-auto lg:mx-0">

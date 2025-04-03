@@ -1,4 +1,5 @@
 import { TbChartBarPopular, TbPhoto } from "react-icons/tb";
+import Image from "next/image";
 
 const RentTracking = () => {
   return (
@@ -21,8 +22,14 @@ const RentTracking = () => {
             inceleyerek finansal durumunuzu yönetin.
           </p>
         </div>
-        <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center mt-4 lg:mt-0">
-          <TbPhoto className="w-8 h-8 sm:w-10 sm:h-10" />
+        <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-2xl flex items-center text-sky-200 justify-center mt-4 lg:mt-0">
+          <Image
+            src="/assets/img/slayt/akilli_kira_takibi.png"
+            alt="Kira Takibi"
+            width={1000}
+            height={1000}
+            className="w-full h-full object-cover"
+          />
         </div>
       </section>
     </div>

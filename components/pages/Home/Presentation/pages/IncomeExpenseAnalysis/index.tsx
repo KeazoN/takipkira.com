@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { TbCash, TbPhoto } from "react-icons/tb";
 
 const IncomeExpenseAnalysis = () => {
@@ -20,8 +21,14 @@ const IncomeExpenseAnalysis = () => {
             Gelir-gider dengenizi koruyarak, mülklerinizden maksimum verim alın.
           </p>
         </div>
-        <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] bg-sky-50 border border-sky-100 rounded-2xl flex items-center text-sky-200 justify-center mt-4 lg:mt-0">
-          <TbPhoto className="w-8 h-8 sm:w-10 sm:h-10" />
+        <div className="w-full h-[250px] sm:h-[300px] lg:h-[400px] rounded-2xl flex items-center text-sky-200 justify-center mt-4 lg:mt-0">
+          <Image
+            src="/assets/img/slayt/gelir_gider.png"
+            alt="Gelir & Gider Analizi"
+            width={1000}
+            height={1000}
+            className="w-full h-full object-cover"
+          />
         </div>
       </section>
     </div>
