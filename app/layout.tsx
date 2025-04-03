@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   if (typeof window !== "undefined") {
-    Clarity.init("qy9jo9uewh");
+    Clarity.init("qy9o617avj");
   }
 
   return (
