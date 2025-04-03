@@ -10,10 +10,13 @@ const Hero = () => {
     <section className="container mt-4 flex items-center justify-between max-w-[1450px] relative overflow-hidden w-full gap-20 rounded-3xl h-[650px] bg-gradient-to-bl from-sky-50 to-sky-100">
       <div className="container w-full max-w-[1255px] mx-auto flex items-center justify-between">
         <div className="flex flex-col items-start gap-6 w-[45%] max-lg:w-full max-lg:items-center max-lg:text-center">
-          <span className="bg-sky-200 font-bold p-2 pr-4 text-sm flex items-center justify-center gap-2 rounded-full max-lg:text-xs max-lg:flex-wrap">
+          <Link
+            href="/islemler/kira-artis-orani"
+            className="bg-sky-200 font-bold p-2 pr-4 text-sm flex items-center justify-center gap-2 rounded-full max-lg:text-xs max-lg:flex-wrap"
+          >
             <span className="px-2 py-1 bg-white rounded-full">Hesapla</span>
             Kira Artışı İçin Tıklayın!
-          </span>
+          </Link>
           <h1 className="flex flex-col text-nowrap text-5xl transition-all duration-300 font-extrabold gap-2 max-lg:text-4xl max-sm:text-3xl">
             Takip Kira ile Kolayı Var
             <RotatingText
@@ -39,11 +42,17 @@ const Hero = () => {
             kira takipini kolaylaştırın.
           </p>
           <div className="flex items-center justify-center gap-4 max-sm:flex-col max-sm:w-full">
-            <Link href="/iletisim" className="bg-primary text-white px-8 py-2 group rounded-full font-medium flex items-center justify-center gap-2 transition border border-primary hover:brightness-75 max-sm:w-full">
+            <Link
+              href="/iletisim"
+              className="bg-primary text-white px-8 py-2 group rounded-full font-medium flex items-center justify-center gap-2 transition border border-primary hover:brightness-75 max-sm:w-full"
+            >
               Hemen Başla{" "}
               <TbArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
             </Link>
-            <Link href="/hizmetlerimiz" className="bg-white text-primary px-8 py-2 group rounded-full font-medium border-gray-100 flex items-center justify-center gap-2 transition border hover:border-gray-400 max-sm:w-full">
+            <Link
+              href="/hizmetlerimiz"
+              className="bg-white text-primary px-8 py-2 group rounded-full font-medium border-gray-100 flex items-center justify-center gap-2 transition border hover:border-gray-400 max-sm:w-full"
+            >
               Daha Fazla{" "}
               <TbArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
             </Link>
