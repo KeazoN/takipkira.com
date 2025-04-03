@@ -6,7 +6,7 @@ import Footer from "@/components/inc/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import WhatsappButton from "@/components/WhatsappButton";
 import { Toaster } from "react-hot-toast";
-import Clarity from "@microsoft/clarity";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Takip Kira - Profesyonel Kira Takip ve Yönetim Sistemi",
@@ -42,10 +42,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (typeof window !== "undefined") {
-    Clarity.init("qy9o617avj");
-  }
-
   return (
     <html lang="tr">
       <body className={`${outfit.variable} antialiased text-[#010F34]`}>
@@ -55,6 +51,15 @@ export default function RootLayout({
         <GoogleAnalytics gaId="G-S7RE5G8E88" />
         <WhatsappButton />
         <Footer />
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "qy9o617avj");
+          `}
+        </Script>
       </body>
     </html>
   );
