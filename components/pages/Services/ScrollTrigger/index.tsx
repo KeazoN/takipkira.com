@@ -6,238 +6,195 @@ import { useEffect, useRef, useState } from "react";
 const services = [
   {
     id: 1,
-    title: "Kira Tahsilatı",
+    title: "Bakım & Tadilat Hizmetleri",
     description: `
-      <h3>Profesyonel Kira Tahsilat Yönetimi</h3>
+      <h3>Ekonomik ve Hızlı Bakım-Tadilat Çözümleri</h3>
       <p>
-        Kiracılarınızdan düzenli kira ödemelerinin tahsilatı ve takibini profesyonel bir şekilde yönetiyoruz. Zamanında tahsilat, gecikme bildirimleri ve detaylı ödeme raporlaması sunuyoruz.
+        Mülkünüzde ihtiyaç duyulan tüm bakım ve tadilat işlemleri, çözüm ortaklarımız aracılığıyla hızlı ve uygun maliyetlerle gerçekleştirilir. Her işlem öncesinde sizin onayınız alınır.
       </p>
       <ul>
-        <li>Otomatik ödeme hatırlatmaları ve bildirimler</li>
-        <li>Çoklu ödeme seçenekleri (EFT, havale, kredi kartı)</li>
-        <li>Aylık detaylı tahsilat raporları</li>
-        <li>Gecikme durumunda profesyonel takip süreci</li>
-        <li>Online ödeme takip platformu</li>
+        <li>Güncel fiyatlarla profesyonel hizmet</li>
+        <li>Mülk değerini koruyan uygulamalar</li>
+        <li>Tam şeffaflık ile faturalandırma</li>
       </ul>
-      <p>
-        *Tüm ödemeler yasal mevzuata uygun şekilde kayıt altına alınır ve raporlanır.
-      </p>
     `,
-    image: "/images/services/rent-collection.jpg",
+    image: "/images/services/maintenance-renovation.jpg",
   },
   {
     id: 2,
-    title: "Bakım Yönetimi",
+    title: "Dask & Sigorta Hizmetleri",
     description: `
-      <h3>Profesyonel Bakım ve Onarım Yönetimi</h3>
+      <h3>DASK ve Sigorta Süreçlerinde Tam Takip</h3>
       <p>
-        Mülkünüzün değerini korumak ve yaşam kalitesini artırmak için kapsamlı bakım ve onarım hizmetleri sunuyoruz. Düzenli kontroller ve önleyici bakım programları ile mülkünüzün her zaman en iyi durumda kalmasını sağlıyoruz.
+        Mülkünüz için gerekli olan Zorunlu Deprem Sigortası (DASK) ve özel sigorta işlemleri zamanında yenilenir, takibi sistem üzerinden yapılır.
       </p>
       <ul>
-        <li>Periyodik bakım planlaması ve takibi</li>
-        <li>Önleyici bakım programları</li>
-        <li>Acil onarım müdahaleleri</li>
-        <li>Profesyonel tedarikçi ağı</li>
-        <li>Detaylı bakım raporları ve dokümantasyon</li>
+        <li>Poliçe yenileme hatırlatmaları</li>
+        <li>Risk analizi ve danışmanlık</li>
+        <li>Hasar anında destek</li>
       </ul>
-      <p>
-        *Tüm bakım ve onarım işlemleri uzman ekipler tarafından gerçekleştirilir ve garanti kapsamında yapılır.
-      </p>
-    `,
-    image: "/images/services/maintenance.jpg",
-  },
-  {
-    id: 3,
-    title: "Kiracı Değerlendirmesi",
-    description: `
-      <h3>Profesyonel Kiracı Değerlendirme ve Seçim Süreci</h3>
-      <p>
-        Mülkünüz için en uygun kiracıyı bulma sürecinde kapsamlı bir değerlendirme sistemi uyguluyoruz. Potansiyel kiracıların finansal durumu, kredi geçmişi ve referanslarını detaylı olarak inceleyerek risk değerlendirmesi yapıyoruz.
-      </p>
-      <ul>
-        <li>Detaylı kimlik ve adres doğrulaması</li>
-        <li>Kredi skoru ve finansal geçmiş analizi</li>
-        <li>İş ve gelir durumu teyidi</li>
-        <li>Önceki kira ödemelerinin kontrolü</li>
-        <li>Referans kontrolleri ve görüşmeler</li>
-        <li>Adli sicil kaydı sorgulaması</li>
-      </ul>
-      <p>
-        *Tüm değerlendirme süreci KVKK kapsamında yürütülür ve gizlilik esaslarına uygun şekilde gerçekleştirilir.
-      </p>
-      <p>
-        Kiracı değerlendirme sürecimiz, mülk sahiplerini olası risklerden korumak ve uzun vadeli, güvenilir kiralama ilişkileri kurmak için tasarlanmıştır.
-      </p>
-    `,
-    image: "/images/services/tenant-evaluation.jpg",
-  },
-  {
-    id: 4,
-    title: "Yasal Destek",
-    description: `
-      <h3>Profesyonel Hukuki Danışmanlık ve Yasal Süreç Yönetimi</h3>
-      <p>
-        Kira sözleşmelerinin hazırlanmasından yasal süreçlerin takibine kadar tüm hukuki konularda uzman desteği sağlıyoruz. Deneyimli hukuk ekibimiz, mülk sahiplerinin haklarını korumak ve yasal süreçleri sorunsuz yönetmek için yanınızda.
-      </p>
-      <ul>
-        <li>Profesyonel kira sözleşmesi hazırlama</li>
-        <li>Yasal danışmanlık hizmetleri</li>
-        <li>Kiracı-mal sahibi anlaşmazlıklarında arabuluculuk</li>
-        <li>İcra ve tahliye süreçlerinin yönetimi</li>
-        <li>Yasal değişikliklerin takibi ve uyum sağlama</li>
-        <li>Vergi ve muhasebe danışmanlığı</li>
-      </ul>
-      <p>
-        *Tüm yasal süreçler deneyimli avukatlarımız tarafından takip edilir ve düzenli olarak raporlanır.
-      </p>
-      <p>
-        Yasal destek hizmetlerimiz, mülk sahiplerinin hukuki haklarını korumak ve olası riskleri minimize etmek için tasarlanmıştır. Güncel mevzuat değişikliklerini takip ederek, sözleşmelerinizin ve işlemlerinizin her zaman yasal çerçevede kalmasını sağlıyoruz.
-      </p>
-    `,
-    image: "/images/services/legal-support.jpg",
-  },
-  {
-    id: 5,
-    title: "Mülk Denetimi",
-    description: `
-      <h3>Profesyonel Mülk Denetimi ve Raporlama</h3>
-      <p>
-        Mülkünüzün sağlığını ve değerini sürekli olarak kontrol ediyoruz. Düzenli denetimler, güvenlik, enerji verimliliği ve yapısal durumunu kontrol ediyoruz.
-      </p>
-      <ul>
-        <li>Güvenlik kontrolleri ve raporları</li>
-        <li>Enerji verimliliği değerlendirmeleri</li>
-        <li>Yapısal durum kontrolleri</li>
-        <li>Güvenlik önerileri ve yapısal güvenlik değerlendirmeleri</li>
-        <li>Detaylı denetim raporları</li>
-      </ul>
-      <p>
-        *Tüm denetimler ve raporlar detaylı bir şekilde kayıt altına alınır ve mülk sahiplerine sunulur.
-      </p>
-      <p>
-        Mülk denetimi hizmetlerimiz, mülk sahiplerinin mülklerinin sağlığını ve değerini sürekli olarak kontrol etmek için tasarlanmıştır.
-      </p>
-    `,
-    image: "/images/services/property-inspection.jpg",
-  },
-  {
-    id: 6,
-    title: "Acil Durum Yönetimi",
-    description: `
-      <h3>Profesyonel Acil Durum Yönetimi ve Müdahale Hizmeti</h3>
-      <p>
-        Mülkünüzün güvenliği ve sağlığı için acil durumlarda hızlı ve profesyonel yanıt veriyoruz.
-      </p>
-      <ul>
-        <li>Acil durumlarda hızlı müdahale</li>
-        <li>Acil durum raporlamaları ve kayıt altına alınması</li>
-        <li>Profesyonel ekiplerin hızlı yanıt vermesi</li>
-        <li>Acil durum planları ve yedek planları</li>
-      </ul>
-      <p>
-        *Tüm acil durumlar profesyonel ekipler tarafından yönetilir ve mülk sahiplerine raporlanır.
-      </p>
-      <p>
-        Acil durum yönetimi hizmetlerimiz, mülk sahiplerinin mülklerinin güvenliği ve sağlığı için acil durumlarda hızlı ve profesyonel yanıt vermek için tasarlanmıştır.
-      </p>
-    `,
-    image: "/images/services/emergency.jpg",
-  },
-  {
-    id: 7,
-    title: "Finansal Raporlama",
-    description: `
-      <h3>Profesyonel Finansal Raporlama ve Takip Hizmeti</h3>
-      <p>
-        Mülkünüzün finansal durumunu detaylı olarak takip ediyor ve raporluyoruz.
-      </p>
-      <ul>
-        <li>Detaylı gelir-gider takibi</li>
-        <li>Aylık ve yıllık finansal raporlar</li>
-        <li>Nakit akışı analizleri</li>
-        <li>Bütçe planlaması ve yönetimi</li>
-        <li>Vergi planlaması ve optimizasyonu</li>
-      </ul>
-      <p>
-        *Tüm finansal raporlar detaylı bir şekilde hazırlanır ve mülk sahiplerine sunulur.
-      </p>
-      <p>
-        Finansal raporlama hizmetlerimiz, mülk sahiplerinin finansal durumlarını şeffaf ve detaylı bir şekilde takip etmeleri için tasarlanmıştır.
-      </p>
-    `,
-    image: "/images/services/financial-reporting.jpg",
-  },
-  {
-    id: 8,
-    title: "Pazarlama Hizmetleri",
-    description: `
-      <h3>Profesyonel Pazarlama ve Tanıtım Hizmeti</h3>
-      <p>
-        Mülkünüzün değerini en iyi şekilde yansıtacak profesyonel pazarlama hizmetleri sunuyoruz.
-      </p>
-      <ul>
-        <li>Profesyonel fotoğraf ve video çekimleri</li>
-        <li>Dijital pazarlama stratejileri</li>
-        <li>Hedef kitle analizi ve konumlandırma</li>
-        <li>Sosyal medya yönetimi</li>
-        <li>İlan yönetimi ve optimizasyonu</li>
-      </ul>
-      <p>
-        *Tüm pazarlama faaliyetleri profesyonel ekipler tarafından yürütülür.
-      </p>
-      <p>
-        Pazarlama hizmetlerimiz, mülkünüzün potansiyel kiracılara en etkili şekilde tanıtılması için tasarlanmıştır.
-      </p>
-    `,
-    image: "/images/services/marketing.jpg",
-  },
-  {
-    id: 9,
-    title: "Sigorta Yönetimi",
-    description: `
-      <h3>Kapsamlı Sigorta Yönetimi ve Takip Hizmeti</h3>
-      <p>
-        Mülkünüzün güvenliği için kapsamlı sigorta çözümleri sunuyoruz.
-      </p>
-      <ul>
-        <li>Özel sigorta paketleri</li>
-        <li>Düzenli poliçe takibi</li>
-        <li>Hasar yönetimi ve takibi</li>
-        <li>Risk değerlendirmesi</li>
-        <li>Sigorta yenileme hatırlatmaları</li>
-      </ul>
-      <p>
-        *Tüm sigorta işlemleri uzman ekipler tarafından yönetilir.
-      </p>
-      <p>
-        Sigorta yönetimi hizmetlerimiz, mülkünüzün olası risklere karşı tam koruma altında olması için tasarlanmıştır.
-      </p>
     `,
     image: "/images/services/insurance.jpg",
   },
   {
-    id: 10,
-    title: "Online Yönetim",
+    id: 3,
+    title: "Güncel Kira Bedel Tespiti",
     description: `
-      <h3>7/24 Online Mülk Yönetim Platformu</h3>
+      <h3>Kira Ekspertiz Raporu ile Değer Tespiti</h3>
       <p>
-        Mülkünüzün tüm yönetim süreçlerini tek bir platformdan takip edebilirsiniz.
+        SPK lisanslı uzmanlar tarafından hazırlanan ekspertiz raporu ile mülkünüzün gerçek kira değeri bilimsel yöntemlerle belirlenir.
       </p>
       <ul>
-        <li>Anlık bildirimler ve raporlamalar</li>
-        <li>Online ödeme takibi</li>
-        <li>Dijital doküman yönetimi</li>
-        <li>Mobil uygulama desteği</li>
-        <li>7/24 destek hizmeti</li>
+        <li>SPK lisanslı uzmanlardan analiz</li>
+        <li>Bölgeye ve mülke özel değerlendirme</li>
+        <li>Kira artış dönemlerinde doğru yönlendirme</li>
       </ul>
-      <p>
-        *Platform sürekli olarak güncellenir ve geliştirilir.
-      </p>
-      <p>
-        Online yönetim platformumuz, mülk sahiplerinin tüm işlemlerini dijital ortamda kolayca yönetmeleri için tasarlanmıştır.
-      </p>
     `,
-    image: "/images/services/online-management.jpg",
+    image: "/images/services/rent-valuation.jpg",
+  },
+  {
+    id: 4,
+    title: "Güvenli Kiralama",
+    description: `
+      <h3>Kişiye Özel, Hukuki Güvenceli Kiralama</h3>
+      <p>
+        Hazırlanan özel sözleşmeler ve doğru kiracı seçimiyle kiralama süreci sorunsuz ve güvenli hale getirilir.
+      </p>
+      <ul>
+        <li>Kişiye özel kira sözleşmesi</li>
+        <li>Kiracı profili analizi</li>
+        <li>Hak kayıplarını önleyici yapı</li>
+      </ul>
+    `,
+    image: "/images/services/secure-rent.jpg",
+  },
+  {
+    id: 5,
+    title: "Kira & Tahsilat Takibi",
+    description: `
+      <h3>Zamanında Tahsilat, Düzenli Takip</h3>
+      <p>
+        Kiracınızla tüm görüşmeler yapılır, tahsilat süreci dijital olarak yönetilir. Gecikmeler anında bildirilir.
+      </p>
+      <ul>
+        <li>Otomatik tahsilat hatırlatmaları</li>
+        <li>Dijital ödeme takibi</li>
+        <li>Gecikme bildirimi ve çözüm süreci</li>
+      </ul>
+    `,
+    image: "/images/services/rent-tracking.jpg",
+  },
+  {
+    id: 6,
+    title: "Online Şube Hizmeti",
+    description: `
+      <h3>7/24 Şeffaf ve Dijital Takip</h3>
+      <p>
+        Nerede olursanız olun, tüm kira, ödeme, evrak ve mülk süreçlerinizi Online Şube üzerinden kolayca takip edebilirsiniz.
+      </p>
+      <ul>
+        <li>Mobil ve web erişim</li>
+        <li>Anlık bildirimler ve raporlar</li>
+        <li>Tam şeffaflık ve veri güvenliği</li>
+      </ul>
+    `,
+    image: "/images/services/online-branch.jpg",
+  },
+  {
+    id: 7,
+    title: "Fırsat Yatırımlar",
+    description: `
+      <h3>Yüksek Getirili Yatırım Fırsatları</h3>
+      <p>
+        Gayrimenkul piyasasındaki fırsat yatırımlar hakkında size özel analiz ve yönlendirme sunarız.
+      </p>
+      <ul>
+        <li>Yüksek kira getirili portföyler</li>
+        <li>Bölgesel gelişim analizleri</li>
+        <li>Profesyonel yatırım danışmanlığı</li>
+      </ul>
+    `,
+    image: "/images/services/investment.jpg",
+  },
+  {
+    id: 8,
+    title: "Mülkün Fiziki Durumu",
+    description: `
+      <h3>Görsel ve Teknik Durum Raporlaması</h3>
+      <p>
+        Mülkünüzün güncel görselleri ve teknik durumu sisteminize yüklenerek size sürekli bilgi verilir.
+      </p>
+      <ul>
+        <li>Fotoğraflı durum tespiti</li>
+        <li>Periyodik fiziki kontroller</li>
+        <li>Online Şube'den erişim</li>
+      </ul>
+    `,
+    image: "/images/services/property-status.jpg",
+  },
+  {
+    id: 9,
+    title: "Ödeme Takip Hizmetleri",
+    description: `
+      <h3>Fatura ve Kira Ödemelerinde Takip</h3>
+      <p>
+        Fatura, vergi ve kira ödemeleri düzenli olarak sistem üzerinden takip edilir, size ve kiracınıza bildirim yapılır.
+      </p>
+      <ul>
+        <li>Fatura ve vergi ödeme hatırlatmaları</li>
+        <li>Online ödeme geçmişi</li>
+        <li>Mobil uygulama üzerinden takip</li>
+      </ul>
+    `,
+    image: "/images/services/payment-tracking.jpg",
+  },
+  {
+    id: 10,
+    title: "Satış Hizmetleri",
+    description: `
+      <h3>Mülkünüzü Değerinde Satıyoruz</h3>
+      <p>
+        Satmak istediğiniz gayrimenkuller, geniş yatırımcı ağına ulaştırılır. Tüm süreç uzmanlar tarafından yönetilir.
+      </p>
+      <ul>
+        <li>Değerinde ve hızlı satış</li>
+        <li>Yatırımcı portföyü ile doğrudan erişim</li>
+        <li>Tüm yasal süreç desteği</li>
+      </ul>
+    `,
+    image: "/images/services/sales.jpg",
+  },
+  {
+    id: 11,
+    title: "Risk Koruması",
+    description: `
+      <h3>Risklere Karşı Tam Güvence</h3>
+      <p>
+        Mülkünüzü kira alamama, gecikme ve hasar gibi risklere karşı koruyacak çözümler sunarız.
+      </p>
+      <ul>
+        <li>Kira garanti sistemleri</li>
+        <li>Hasar ve ödeme riski analizi</li>
+        <li>Proaktif çözüm önerileri</li>
+      </ul>
+    `,
+    image: "/images/services/risk-protection.jpg",
+  },
+  {
+    id: 12,
+    title: "Teminat",
+    description: `
+      <h3>Güvenceli Kiralama Süreci</h3>
+      <p>
+        Kiralama süreçlerinde teminat bedelleri ve güvence sistemleri ile mülk sahibinin çıkarları korunur.
+      </p>
+      <ul>
+        <li>Teminat bedeli takibi</li>
+        <li>Güvence sistemleri entegrasyonu</li>
+        <li>Teminat iadelerinde raporlama</li>
+      </ul>
+    `,
+    image: "/images/services/deposit.jpg",
   },
 ];
 
